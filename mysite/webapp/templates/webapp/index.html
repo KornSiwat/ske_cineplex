@@ -1,10 +1,9 @@
 {% extends 'webapp/base.html' %}
 {% block content %}
     <div class='content-box'>
-        {% include 'webapp/includes/route.html' with route='Showtimes' %}
-        {% for i in theater_lists %}
-            <h1>movie {{i}}</h1>
+        {% include 'webapp/includes/route.html' with route=route %}
+        {% for theater_obj in theater_lists %}
+            {% include 'webapp/includes/theater_card.html' with theater=theater_obj %}
         {% endfor %}
     </div>
-
 {% endblock %}

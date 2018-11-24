@@ -25,11 +25,21 @@ body {
 }
 
 .headroute {
-    padding: 10px;
+    padding: 15px 20px;
 }
 
 .route  {
-    font-size: 27px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgb(86, 99, 109);
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    color: rgb(92, 98, 102);
+}
+
+.navbar {
+    font-size: 22px;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+.bg-light {
+    background: #f6f6f6 !important;
+    border: rgb(216, 216, 216) solid 0.1px;
 }

@@ -2,7 +2,6 @@ from django.db import models
 
 class Movie(models.Model):
     name = models.CharField(max_length=50)
-
     CATEGORIES_CHOICE = (
         ('GE', 'General'),
         ('AC', 'Action'),
@@ -16,6 +15,8 @@ class Movie(models.Model):
         choices=CATEGORIES_CHOICE,
         default='GE',
     )
+    release = models.DateField()
+    img = models.ImageField(upload_to='img/', default='')
 
     def __str__(self):
         return self.name

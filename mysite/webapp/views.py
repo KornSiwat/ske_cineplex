@@ -1,5 +1,6 @@
 from django.shortcuts import render
+from .models import Theater
 
-# Create your views here.
 def index(request):
-    return render(request, 'webapp/index.html')
+    theater_lists = Theater.objects.all()
+    return render(request, 'webapp/index.html',{'theater_lists' : theater_lists})

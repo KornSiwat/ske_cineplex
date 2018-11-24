@@ -1,3 +1,35 @@
 body {
-    background: gray;
+    background: darkgray;
+}
+
+.content-box {
+    background: #f8f9fa;
+    margin: 0 2%;
+    height: 100%;
+}
+
+.logo {
+    margin: 0;
+    width: 190px;
+    height: 55px;
+}
+
+.add-mar {
+    margin-top: 7px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    text-align: center
+}
+
+.headroute {
+    padding: 10px;
+}
+
+.route  {
+    font-size: 27px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(86, 99, 109);
 }

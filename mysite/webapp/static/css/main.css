@@ -1,25 +1,18 @@
-html {
+html,body {
     height: 100%;
     margin: 0;
+    display: block;
 }
 
 body {
-    background: rgb(95, 95, 95);
+    background: rgb(255, 255, 255);
     font-size: 20px;
     font-family: 'Titillium Web', sans-serif;
     color: rgb(95, 95, 95);
-    height: 100%;
-    margin: 0;
 }
 
 h3 {
     font-size: 22px;
-}
-
-.content-box {
-    background:  rgb(235, 235, 235);
-    margin: 0 2%;
-    height: 100%;
 }
 
 .logo {
@@ -39,8 +32,9 @@ h3 {
 }
 
 .headroute {
+
     padding: 10px 20px;
-    margin: 0 0 -10px 0;
+    margin: 5px 0 -10px 0;
 }
 
 .route  {
@@ -105,9 +99,8 @@ h3 {
 .list {
     background: white;
     margin: 0 7%;
-    padding-top: 10px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    overflow: scroll;
 }
+

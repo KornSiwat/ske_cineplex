@@ -1,0 +1,6 @@
+<div class='theater_card'>
+    <div class="theater_name">
+        <h3 class="center">{{theater.theater_id}}: {{theater.movie.name}}</h3>
+    </div>
+    <img class="poster" {% if theater_obj.movie.img %} src='{{theater.movie.img.url}}' {% endif %} alt='movie-poster'>
+</div>

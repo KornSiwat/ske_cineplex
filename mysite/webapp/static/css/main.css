@@ -1,9 +1,23 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
 body {
-    background: darkgray;
+    background: rgb(95, 95, 95);
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    color: rgb(95, 95, 95);
+    height: 100%;
+    margin: 0;
+}
+
+h3 {
+    font-size: 22px;
 }
 
 .content-box {
-    background: #f8f9fa;
+    background:  rgb(235, 235, 235);
     margin: 0 2%;
     height: 100%;
 }
@@ -25,13 +39,14 @@ body {
 }
 
 .headroute {
-    padding: 15px 20px;
+    padding: 10px 20px;
+    margin: 0 0 -10px 0;
 }
 
 .route  {
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Titillium Web', sans-serif;
-    color: rgb(0, 0, 0);
+    color:  rgb(95, 95, 95);
 }
 
 .navbar {
@@ -42,4 +57,57 @@ body {
 .bg-light {
     background: #f6f6f6 !important;
     border: rgb(216, 216, 216) solid 0.1px;
+}
+
+.theater_card {
+    float: left;
+    background: white;
+    border: darkgray solid 2px;
+    /* border-radius: 5px; */
+    width: 250px;
+    height: 390px;
+    margin: 10px 20px;
+}
+
+.theater_name{
+    background: rgb(240, 240, 240);
+    height: 40px;
+    padding-top: 6px;
+    border-bottom: darkgray solid 2px;
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+}
+
+.movie_card {
+    background: white;
+    border: darkgray solid 2px;
+    /* border-radius: 5px; */
+    width: 250px;
+    height: 400px;
+    margin: 10px auto;
+}
+
+.movie_name{
+    background: rgb(240, 240, 240);
+    height: 45px;
+    padding-top: 4px;
+    border-bottom: darkgray solid 2px;
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+}
+
+.poster{
+    margin: 13px 15px;
+    width: 215px;
+    height: 318px;
+}
+
+.list {
+    background: white;
+    margin: 0 7%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: scroll;
 }

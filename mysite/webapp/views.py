@@ -7,5 +7,5 @@ def default(request):
 
 def home(request):
     theater_lists = Theater.objects.all()
-    return render(request, 'webapp/index.html',{'theater_lists' : theater_lists, 'route' : 'Showtimes',
+    return render(request, 'webapp/index.html',{'theater_lists' : theater_lists, 'route' : 'Now Showing',
     })

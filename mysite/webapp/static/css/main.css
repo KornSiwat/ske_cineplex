@@ -106,3 +106,20 @@ h3 {
     flex-wrap: wrap;
 }
 
+.movie_info_pic {
+    margin: 10px auto 10px auto;
+    display: flex;
+    justify-content: center;
+    width: 215px;
+    height: 318px;
+}
+
+.movie_description {
+    text-align: center;
+    padding: 0 5%;
+}
+
+.movie_info_name {
+    text-align: center;
+
+}

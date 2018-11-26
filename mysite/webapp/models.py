@@ -15,6 +15,8 @@ class Movie(models.Model):
         choices=CATEGORIES_CHOICE,
         default='GE',
     )
+
+    description = models.TextField(max_length=999, null=True)
     release = models.DateField()
     img = models.ImageField(upload_to='img/', default='')
 

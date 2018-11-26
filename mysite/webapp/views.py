@@ -14,3 +14,8 @@ def movie(request):
     movie_lists = Movie.objects.all().order_by('name')
     return render(request, 'webapp/movie.html',{'movie_lists' : movie_lists, 'route' : 'Movies',
     })
+
+def movie_info(request, id):
+    movie = Movie.objects.get(id=id)
+    return render(request, 'webapp/movie_info.html',{ 'movie' : movie , 'route' : 'Movie Info'
+    })

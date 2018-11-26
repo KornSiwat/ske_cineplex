@@ -2,5 +2,7 @@
     <div class="theater_name">
         <h3 class="center">{{movie.name}}</h3>
     </div>
-    <img class="poster" {% if movie.img %} src='{{movie.img.url}}' {% endif %} alt='movie-poster'>
+    <a href='/movie/{{movie.id}}'>
+        <img class="poster" {% if movie.img %} src='{{movie.img.url}}' {% endif %} alt='movie-poster'>
+    </a>
 </div>

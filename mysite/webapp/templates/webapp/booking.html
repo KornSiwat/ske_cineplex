@@ -1,0 +1,5 @@
+{% extends 'webapp/base.html' %}
+{% block content%}
+    {% include 'webapp/includes/route.html' with route=route %}
+    <img class='movie_info_pic' src='{{theater.movie.img.url}}' alt='movie pic' width="215px" height="318px">
+{% endblock %}

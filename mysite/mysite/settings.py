@@ -37,6 +37,7 @@ INSTALLED_APPS = ['webapp',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [

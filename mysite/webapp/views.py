@@ -7,15 +7,22 @@ def default(request):
 
 def home(request):
     theater_lists = Theater.objects.all()
-    return render(request, 'webapp/index.html',{'theater_lists' : theater_lists, 'route' : 'Now Showing',
+    return render(request, 'webapp/index.html', {'theater_lists' : theater_lists, 'route' : 'Now Showing',
     })
 
 def movie(request):
     movie_lists = Movie.objects.all().order_by('name')
-    return render(request, 'webapp/movie.html',{'movie_lists' : movie_lists, 'route' : 'Movies',
+    return render(request, 'webapp/movie.html', {'movie_lists' : movie_lists, 'route' : 'Movies',
     })
 
 def movie_info(request, id):
     movie = Movie.objects.get(id=id)
-    return render(request, 'webapp/movie_info.html',{ 'movie' : movie , 'route' : 'Movie Info'
+    return render(request, 'webapp/movie_info.html', { 'movie' : movie , 'route' : 'Movie Info'
     })
+
+def booking(request, id):
+    theater = Theater.objects.get(id=id)
+    return render(request, 'webapp/booking.html', { 'theater' : theater , 'route' : 'Booking'})
+
+def branches(request):
+    return render(request, 'webapp/branches.html')

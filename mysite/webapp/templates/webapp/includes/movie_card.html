@@ -1,6 +1,6 @@
-<div class='movie_card'>
-    <div class="movie_name">
-        <h3 class="center">{{theater.movie.name}}</h2>
+<div class='theater_card'>
+    <div class="theater_name">
+        <h3 class="center">{{movie.name}}</h3>
     </div>
-    <img class="poster" {% if theater_obj.movie.img %} src='{{theater.movie.img.url}}' {% endif %} alt='movie-poster'>
+    <img class="poster" {% if movie.img %} src='{{movie.img.url}}' {% endif %} alt='movie-poster'>
 </div>

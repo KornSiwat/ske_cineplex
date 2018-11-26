@@ -1,0 +1,9 @@
+{% extends 'webapp/base.html' %}
+{% block content %}
+        {% include 'webapp/includes/route.html' with route=route %}
+        <div class="list">
+            {% for movie in movie_lists %}
+            {% include 'webapp/includes/movie_card.html' with movie=movie %}
+            {% endfor %}
+        </div>
+{% endblock %}

@@ -16,6 +16,8 @@ h3 {
 }
 
 .logo {
+    display: flex !important;
+    justify-content: center !important;
     margin: 0;
     width: 190px;
     height: 55px;

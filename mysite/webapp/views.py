@@ -22,7 +22,10 @@ def movie_info(request, id):
 
 def booking(request, id):
     theater = Theater.objects.get(id=id)
-    return render(request, 'webapp/booking.html', { 'theater' : theater , 'route' : 'Booking'})
+    return render(request, 'webapp/booking.html', { 'theater' : theater , 'route' : f'Booking : {theater.theater_id}'})
 
 def branches(request):
-    return render(request, 'webapp/branches.html')
+    return render(request, 'webapp/branches.html', { 'route': 'Branches'})
+
+def contact(request):
+    return render(request, 'webapp/contact.html', { 'route': 'Contact'})

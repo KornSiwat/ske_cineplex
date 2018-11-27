@@ -34,13 +34,12 @@ h3 {
 }
 
 .headroute {
-
     padding: 10px 20px;
-    margin: 5px 0 -10px 0;
+    margin: 10px 0 -10px 0;
 }
 
 .route  {
-    font-size: 25px;
+    font-size: 28px;
     font-family: 'Titillium Web', sans-serif;
     color:  rgb(238, 238, 238);
 }
@@ -131,5 +130,21 @@ h3 {
 
 .movie_info_name {
     text-align: center;
+
+}
+
+.owner {
+    border-radius: 120px;
+    display: flex;
+    margin: 15px auto;
+    width: 250px;
+    height: auto;
+    border: solid white;    
+}
+
+.contact-description {
+    margin: 10px 25px;
+    text-align: center;
+    color:  rgb(238, 238, 238);
 
 }

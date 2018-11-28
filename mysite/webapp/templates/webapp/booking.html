@@ -6,7 +6,11 @@
             <div class="booking-description">
                 <h2 class='black booking-name'>{{theater.theater_id}}: {{theater.movie.name}} </h2>
                 <h3 class='black booking-date'>Date: {{today}} </h3>
-                <div class='black booking-showtimes'>Showtimes: <button class="showtime-button">13:00</button><button class="showtime-button">13:00</button> </div>
+                <div class='black booking-showtimes'>Showtimes:
+                    {% for showtime in showtimes %}
+                    <button class="showtime-button">{{showtime}}</button>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

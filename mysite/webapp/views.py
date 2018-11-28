@@ -31,6 +31,8 @@ def booking(request, id):
     month = datetime.now().month
     year = datetime.now().year
     today = f'{day}, {month}, {year}'
+    showtimes = ['11:40','12:30']
+    selected = ['G5','B3','F7']
 
     return render(request, 'webapp/booking.html',
             {   'theater' : theater , 
@@ -38,7 +40,8 @@ def booking(request, id):
                 'rows' : rows,
                 'seats' : range(1,theater.seats+1),
                 'today' : today,
-                # 'selected' : selected,
+                'showtimes' : showtimes,
+                'selected' : selected,
             })
 
 def branches(request):

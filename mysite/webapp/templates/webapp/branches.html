@@ -1,5 +1,10 @@
 {% extends 'webapp/base.html' %}
 {%block content%}
+{% load staticfiles %}
     {% include 'webapp/includes/route.html' with route=route %}
+    <img class='branches'src='{% static 'img/kasetsart.jpg' %}' alt='kasetsart pic'>
+    <div class="branch-name">
+        <h3>Kesetsart University</h3>
+    </div>
     
 {%endblock%}

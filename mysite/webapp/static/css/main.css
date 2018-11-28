@@ -124,12 +124,20 @@ h3 {
 }
 
 .movie_description {
-    text-align: center;
+    text-align: justify;
+    text-align-last: center;
     padding: 0 5%;
+    text-indent: 5%;
+}
+
+.release {
+    text-align: center;
+    text-indent: 0 !important;
 }
 
 .movie_info_name {
     text-align: center;
+    text-indent: 0 !important;
 
 }
 
@@ -142,9 +150,14 @@ h3 {
     border: solid white;    
 }
 
+.contact-name{
+    text-align: center !important;
+    text-indent: 0 !important;
+}
 .contact-description {
-    margin: 10px 25px;
-    text-align: center;
+    margin: 10px 50px;
+    text-indent: 5%;
+    text-align: justify;
+    text-align-last: center;
     color:  rgb(238, 238, 238);
-
 }

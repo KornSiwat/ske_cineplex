@@ -1,11 +1,12 @@
 {% extends 'webapp/base.html' %}
 {% block content %}
         {% include 'webapp/includes/route.html' with route=route %}
-        <img class='movie_info_pic' src='{{movie.img.url}}' alt='movie pic' width="215px" height="318px">
+        <img class='movie_info_pic' src='{{movie.img.url}}' alt='movie pic'">
+        <div class="frame"></div>
         <div class="movie_info">
-            <div class='info movie_description'>
+            <div class='white movie_description'>
                 <h1 class='movie_info_name'>{{movie.name}} </h1>
-                <h3 class='release'>release: {{movie.release}}</h3>
+                <h3 class='release'>release date: {{movie.release}}</h3>
                 <p>{{movie.description}}</p>
             </div>
         </div>

@@ -1,10 +1,11 @@
 {% extends 'webapp/base.html' %}
 {% block content %}
         {% include 'webapp/includes/route.html' with route=route %}
+    <div class="contain">  
         <div class="list">
             {% for theater_obj in theater_lists %}
             {% include 'webapp/includes/theater_card.html' with theater=theater_obj %}
-            <p>{{theater_obj.seat}}</p>
             {% endfor %}
         </div>
+    </div>
 {% endblock %}

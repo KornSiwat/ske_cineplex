@@ -1,5 +1,25 @@
 {% extends 'webapp/base.html' %}
 {% block content%}
-    {% include 'webapp/includes/route.html' with route=route %}
-    <img class='movie_info_pic' src='{{theater.movie.img.url}}' alt='movie pic' width="215px" height="318px">
+    <div class="box-booking">
+        <div class="booking-detail">
+            <img class='booking-pic' src='{{theater.movie.img.url}}' alt='movie pic'>
+            <div class="booking-description">
+                <h2 class='black booking-name'>{{theater.theater_id}}: {{theater.movie.name}} </h2>
+                <h3 class='black booking-date'>Date: {{today}} </h3>
+                <div class='black booking-showtimes'>Showtimes: <button class="showtime-button">13:00</button><button class="showtime-button">13:00</button> </div>
+            </div>
+        </div>
+    </div>
+    <div class="screen white">Screen</div>
+    <table class="seats white">
+        {% for row_name in rows %}
+        <tr>
+            <th>{{row_name}}</th> 
+            {% for seat_num in seats %}
+                <td>{{seat_num}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
 {% endblock %}

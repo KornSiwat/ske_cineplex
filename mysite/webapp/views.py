@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from .models import Theater, Movie
+from string import ascii_uppercase
+from datetime import datetime
 
 def default(request):
     return redirect('home/')
@@ -22,7 +24,22 @@ def movie_info(request, id):
 
 def booking(request, id):
     theater = Theater.objects.get(id=id)
-    return render(request, 'webapp/booking.html', { 'theater' : theater , 'route' : f'Booking : {theater.theater_id}'})
+    rows = ascii_uppercase[:theater.rows]
+    rows = [x for x in rows]
+    rows = rows[::-1]
+    day = datetime.now().day
+    month = datetime.now().month
+    year = datetime.now().year
+    today = f'{day}, {month}, {year}'
+
+    return render(request, 'webapp/booking.html',
+            {   'theater' : theater , 
+                'route' : f'Seats Booking',
+                'rows' : rows,
+                'seats' : range(1,theater.seats+1),
+                'today' : today,
+                # 'selected' : selected,
+            })
 
 def branches(request):
     return render(request, 'webapp/branches.html', { 'route': 'Branches'})

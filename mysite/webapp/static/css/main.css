@@ -45,10 +45,6 @@ h3 {
     color:  rgb(238, 238, 238);
 }
 
-.info {
-    color:  rgb(238, 238, 238);
-}
-
 .navbar {
     font-size: 22px;
     font-family: 'Titillium Web', sans-serif !important;
@@ -107,13 +103,20 @@ h3 {
     height: 318px;
 }
 
+.contain {
+    padding: 0 5%;
+}
+
 .list {
     background: rgb(75, 75, 75);
-    margin: 0 7%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 }
+/* .list::after {
+    content: '';
+    flex: auto;
+} */
 
 .movie_info_pic {
     margin: 10px auto 10px auto;
@@ -176,4 +179,103 @@ h3 {
     width: 75%;
     height: auto;
     border-radius: 1%;
+}
+
+.white {
+    color: rgb(238, 238, 238);
+}
+
+.black {
+    color: rgba(43, 43, 43, 0.808);
+}
+
+.screen {
+    text-align: center;
+    width: 250px;
+    border-radius: 5px;
+    border: solid rgb(238, 238, 238);
+    margin: 20px auto;
+}
+
+.seats {
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+th,td {
+    padding: 0 20px;
+}
+
+table, th, td {
+    border: black solid;
+    border-collapse: collapse;  
+}
+
+.frame {
+    margin: -149px auto 15px auto; 
+    width: 238px;
+    height: 150px;
+    background: rgb(196, 196, 196);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.frame_booking {
+    height: 330px;
+}
+
+.frame_book {
+    width: 238px;
+    height: 150px;
+    background: rgb(196, 196, 196);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
+.booking-detail {
+    margin: 70px auto 60px auto;
+    padding: 0 20px 0 100px;
+    background: #f6f6f6;
+    height: 200px;
+    width: 700px;
+    border-radius: 3px;
+}
+
+
+.booking-pic{
+    margin: -40px 40px 0 -70px;
+    width: 188.48px;
+    height: 279px;
+    box-shadow: 0 15px 37px -5px rgba(48, 48, 48, 0.7);
+}
+
+.booking-description {
+    margin: -240px 0 100px 140px;
+    /* background: rgb(104, 99, 99); */
+    width: 450px;
+    height: 190px;
+    font-family: Helvetica, sans-serif;
+    text-align: left;
+    text-indent: 10px;
+}
+
+.booking-name {
+    margin-top: 45px;
+    font-size: 25px;
+}
+
+.booking-date {
+    text-indent: 11px;
+    font-size: 17px;
+}
+.booking-showtimes {
+    text-indent: 11px;
+    font-size: 17px;
+}
+
+.showtime-button {
+    margin-right: 4px;
+    font-size: 12px;
+    border-radius: 5px;
 }

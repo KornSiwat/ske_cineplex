@@ -17,15 +17,18 @@ h3 {
 }
 
 .logo {
-    display: flex !important;
-    justify-content: center !important;
-    margin: 0;
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    right: 50%;
+    margin-left: -95px;
     width: 190px;
     height: 55px;
 }
 
 .add-mar {
-    margin-top: 7px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 .center {
@@ -197,19 +200,6 @@ h3 {
     margin: 20px auto;
 }
 
-.seats {
-    margin: 0 auto;
-}
-
-th,td {
-    padding: 0 20px;
-}
-
-table, th, td {
-    border: black solid;
-    border-collapse: collapse;  
-}
-
 .frame {
     margin: -149px auto 15px auto; 
     width: 238px;
@@ -283,4 +273,23 @@ table, th, td {
 
 .showtime-button:hover {
     transform: scale(1.02);
+}
+
+.seats {
+    margin: 0 auto;
+}
+
+th,td {
+    padding: 0 4px;
+}
+
+/* table, th, td {
+    border: black solid;
+    border-collapse: collapse;  
+} */
+
+.seat-icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
 }

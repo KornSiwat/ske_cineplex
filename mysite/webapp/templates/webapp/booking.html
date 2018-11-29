@@ -19,8 +19,17 @@
         {% for row_name in rows %}
         <tr>
             <th>{{row_name}}</th> 
-            {% for seat_num in seats %}
-                <td>{{seat_num}}</td>
+            {% load staticfiles %}
+            {% for seat_row in seats_list %}
+                {% for seat_id in seat_row %}
+                    {% if row_name in seat_id %}
+                        {% if 'booked' in seat_id %}
+                            <td><img class='seat-icon' src="{% static 'img/booked.png' %}"></td>
+                        {% else %}
+                            <td><img class='seat-icon' id='{seat_id}'src="{% static 'img/free.png' %}"></td>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
         </tr>
         {% endfor %}

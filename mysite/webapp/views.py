@@ -9,17 +9,23 @@ def default(request):
 
 def home(request):
     theater_lists = Theater.objects.all()
-    return render(request, 'webapp/index.html', {'theater_lists' : theater_lists, 'route' : 'Now Showing',
+    return render(request, 'webapp/index.html',
+            {'theater_lists' : theater_lists,
+            'route' : 'Now Showing',
     })
 
 def movie(request):
     movie_lists = Movie.objects.all().order_by('name')
-    return render(request, 'webapp/movie.html', {'movie_lists' : movie_lists, 'route' : 'Movies',
+    return render(request, 'webapp/movie.html', 
+            {'movie_lists' : movie_lists, 
+            'route' : 'Movies',
     })
 
 def movie_info(request, id):
     movie = Movie.objects.get(id=id)
-    return render(request, 'webapp/movie_info.html', { 'movie' : movie , 'route' : 'Movie Info'
+    return render(request, 'webapp/movie_info.html',
+            { 'movie' : movie , 
+            'route' : 'Movie Info',
     })
 
 def booking(request, id):
@@ -32,7 +38,15 @@ def booking(request, id):
     year = datetime.now().year
     today = f'{day}, {month}, {year}'
     showtimes = ['11:40','12:30']
-    selected = ['G5','B3','F7']
+    booked = ['G5','B3','F7']
+    seats_list = []
+    for i,row in enumerate(rows):
+        seats_list.append([])
+        for seat_no in range(1,theater.seats+1):
+            if f'{row}{seat_no}' in booked:
+                seats_list[i].append(f'{row}booked')
+            else:
+                seats_list[i].append(f'{row}{seat_no}')
 
     return render(request, 'webapp/booking.html',
             {   'theater' : theater , 
@@ -41,7 +55,7 @@ def booking(request, id):
                 'seats' : range(1,theater.seats+1),
                 'today' : today,
                 'showtimes' : showtimes,
-                'selected' : selected,
+                'seats_list' : seats_list,
             })
 
 def branches(request):

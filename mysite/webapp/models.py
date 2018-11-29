@@ -29,8 +29,8 @@ class Theater(models.Model):
     theater_id = models.CharField(max_length=10)
     movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
     rows = models.PositiveIntegerField(default=9)
-    seats = models.PositiveIntegerField(default=9)
-    booked_seat = models.TextField(max_length=999, null=True)
+    seats = models.PositiveIntegerField(default=20)
+    booked_seat = models.TextField(max_length=999, null=True,blank=True)
 
     def __str__(self):
         return f'{self.theater_id} showing: {self.movie}'

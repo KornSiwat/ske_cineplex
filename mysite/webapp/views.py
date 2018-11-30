@@ -31,6 +31,12 @@ def movie_info(request, id):
             'route' : 'Movie Info',
     })
 
+def flatten(input):
+    new_list = []
+    for i in input:
+        for j in i:
+            new_list.append(j)
+    return new_list
 
 def booking(request, id):
     global TicketBooker
@@ -43,7 +49,14 @@ def booking(request, id):
             TicketBooker.save()
             return redirect(home)
     elif request.method == "GET":
-        booked = list(TicketBookerModel.objects.filter(theater=theater.theater_id).values_list('seat', flat=True))
+        rawbooked = list(TicketBookerModel.objects.filter(theater=theater.theater_id).values_list('seat', flat=True))
+        booked = []
+        for i in rawbooked:
+            if ',' in i:
+                booked.append(i.split(','))
+            else:
+                booked.append(i)
+        booked = flatten(booked)
         rows = ascii_uppercase[:theater.rows]
         rows = [x for x in rows]
         rows = rows[::-1]
@@ -70,6 +83,7 @@ def booking(request, id):
                     'showtimes' : showtimes,
                     'seats_list' : seats_list,
                     'form' : form,
+                    # 'booked': booked
                 })
 
 def branches(request):

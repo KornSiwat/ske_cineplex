@@ -1,5 +1,4 @@
 from django.db import models
-from multiselectfield import MultiSelectField
 
 class Movie(models.Model):
     name = models.CharField(max_length=50)
@@ -30,7 +29,6 @@ class Theater(models.Model):
     movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
     rows = models.PositiveIntegerField(default=9)
     seats = models.PositiveIntegerField(default=20)
-    booked_seat = models.CharField(max_length=255, null=True,blank=True)
 
     def __str__(self):
         return f'{self.theater_id} showing: {self.movie}'

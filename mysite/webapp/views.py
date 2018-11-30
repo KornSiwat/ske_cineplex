@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from .models import Theater
 from .models import Movie
-from .models import TicketBooker
+from .models import TicketBooker as TicketBookerModel
 from string import ascii_uppercase
 from datetime import datetime
 from .forms import CreateBooker
@@ -31,16 +31,19 @@ def movie_info(request, id):
             'route' : 'Movie Info',
     })
 
+
 def booking(request, id):
+    global TicketBooker
     theater = Theater.objects.get(id=id)
-    form = CreateBooker(request.POST, instance=None)
+    form = CreateBooker(request.POST)
     if request.method == 'POST':
         if form.is_valid():
             TicketBooker = form.save(commit=False)
             TicketBooker.theater = theater.theater_id
             TicketBooker.save()
-            return redirect (home)
+            return redirect(home)
     elif request.method == "GET":
+        booked = list(TicketBookerModel.objects.filter(theater=theater.theater_id).values_list('seat', flat=True))
         rows = ascii_uppercase[:theater.rows]
         rows = [x for x in rows]
         rows = rows[::-1]
@@ -49,8 +52,6 @@ def booking(request, id):
         year = datetime.now().year
         today = f'{day}, {month}, {year}'
         showtimes = ['11:40','12:30']
-        booked = theater.booked_seat
-        booked = booked.split(',')
         seats_list = []
         for i,row in enumerate(rows):
             seats_list.append([])
@@ -68,7 +69,7 @@ def booking(request, id):
                     'today' : today,
                     'showtimes' : showtimes,
                     'seats_list' : seats_list,
-                    'form' : form
+                    'form' : form,
                 })
 
 def branches(request):

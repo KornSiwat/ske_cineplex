@@ -1,22 +1,23 @@
 {% extends 'webapp/base.html' %}
 {% block content%}
-    <div class="box-booking">
-        <div class="booking-detail">
-            <img class='booking-pic' src='{{theater.movie.img.url}}' alt='movie pic'>
-            <div class="booking-description">
-                <h2 class='black booking-name'>{{theater.theater_id}}: {{theater.movie.name}} </h2>
-                <h3 class='black booking-date'>Date: {{today}} </h3>
-                <div class='black booking-showtimes'>Showtimes:
-                    {% for showtime in showtimes %}
-                    <button class="showtime-button">{{showtime}}</button>
-                    {% endfor %}
-                </div>
-                <form method="POST">
-                    {% csrf_token %}
+<div class="box-booking">
+    <div class="booking-detail">
+        <img class='booking-pic' src='{{theater.movie.img.url}}' alt='movie pic'>
+        <div class="booking-description">
+            <h2 class='black booking-name'>{{theater.theater_id}}: {{theater.movie.name}} </h2>
+            <h3 class='black booking-date'>Date: {{today}} </h3>
+            <div class='black booking-showtimes'>Showtimes:
+                {% for showtime in showtimes %}
+                <button class="showtime-button">{{showtime}}</button>
+                {% endfor %}
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                {{form.theater}}
                     <div class="form">
                         <h3 class='form-name black' >Name: </h3>
                         {{form.name}}
-                        <h3 class='form-seat black' >Seat: </h3>
+                        <h3 class='form-seat black'>Seat: </h3>
                         {{form.seat}}
                         <button class="book-button" type="submit">Book</button>
                     </div>

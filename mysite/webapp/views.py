@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from .models import Theater, Movie
+from .models import Theater, Movie,Booker
 from string import ascii_uppercase
 from datetime import datetime
+from .forms import CreateBooker
 
 def default(request):
     return redirect('home/')
@@ -30,33 +31,43 @@ def movie_info(request, id):
 
 def booking(request, id):
     theater = Theater.objects.get(id=id)
-    rows = ascii_uppercase[:theater.rows]
-    rows = [x for x in rows]
-    rows = rows[::-1]
-    day = datetime.now().day
-    month = datetime.now().month
-    year = datetime.now().year
-    today = f'{day}, {month}, {year}'
-    showtimes = ['11:40','12:30']
-    booked = ['G5','B3','F7']
-    seats_list = []
-    for i,row in enumerate(rows):
-        seats_list.append([])
-        for seat_no in range(1,theater.seats+1):
-            if f'{row}{seat_no}' in booked:
-                seats_list[i].append(f'{row}booked')
-            else:
-                seats_list[i].append(f'{row}{seat_no}')
+    # bookObj = Booker.objects.create(theater=theater.theater_id)
+    form = CreateBooker(request.POST, instance=None)
+    if request.method == 'POST':
+        if form.is_valid():
+            Booker = form.save(commit=False)
+            Booker.save()
+            return redirect (home)
+    elif request.method == "GET":
+        rows = ascii_uppercase[:theater.rows]
+        rows = [x for x in rows]
+        rows = rows[::-1]
+        day = datetime.now().day
+        month = datetime.now().month
+        year = datetime.now().year
+        today = f'{day}, {month}, {year}'
+        showtimes = ['11:40','12:30']
+        booked = theater.booked_seat
+        booked = booked.split(',')
+        seats_list = []
+        for i,row in enumerate(rows):
+            seats_list.append([])
+            for seat_no in range(1,theater.seats+1):
+                if f'{row}{seat_no}' in booked:
+                    seats_list[i].append(f'{row}booked')
+                else:
+                    seats_list[i].append(f'{row}{seat_no}')
 
-    return render(request, 'webapp/booking.html',
-            {   'theater' : theater , 
-                'route' : f'Seats Booking',
-                'rows' : rows,
-                'seats' : range(1,theater.seats+1),
-                'today' : today,
-                'showtimes' : showtimes,
-                'seats_list' : seats_list,
-            })
+        return render(request, 'webapp/booking.html',
+                {   'theater' : theater , 
+                    'route' : f'Seats Booking',
+                    'rows' : rows,
+                    'seats' : range(1,theater.seats+1),
+                    'today' : today,
+                    'showtimes' : showtimes,
+                    'seats_list' : seats_list,
+                    'form' : form
+                })
 
 def branches(request):
     return render(request, 'webapp/branches.html', { 'route': 'Branches'})

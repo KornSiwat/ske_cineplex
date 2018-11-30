@@ -30,15 +30,20 @@ class Theater(models.Model):
     movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
     rows = models.PositiveIntegerField(default=9)
     seats = models.PositiveIntegerField(default=20)
-    booked_seat = models.TextField(max_length=999, null=True,blank=True)
+    booked_seat = models.CharField(max_length=255, null=True,blank=True)
 
     def __str__(self):
         return f'{self.theater_id} showing: {self.movie}'
 
+
 class Booker(models.Model):
     name = models.CharField(max_length=30)
-    theater = models.ForeignKey(Theater,on_delete=models.CASCADE)
+    theater = models.CharField(max_length=10)
     seat = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
+
+    def create_booker(self, theater):
+        booker = self.create(theater=theater)
+        return booker

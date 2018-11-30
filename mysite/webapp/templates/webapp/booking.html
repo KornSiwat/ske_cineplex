@@ -11,6 +11,17 @@
                     <button class="showtime-button">{{showtime}}</button>
                     {% endfor %}
                 </div>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form">
+                        <h3 class='form-name black' >Name: </h3>
+                        {{form.name}}
+                        <h3 class='form-seat black' >Seat: </h3>
+                        {{form.seat}}
+                        {{form.theater}}
+                        <button class="book-button" type="submit">Book</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -26,7 +37,7 @@
                         {% if 'booked' in seat_id %}
                             <td><img class='seat-icon' src="{% static 'img/booked.png' %}"></td>
                         {% else %}
-                            <td><img class='seat-icon' id='{seat_id}'src="{% static 'img/free.png' %}"></td>
+                            <td><img class='seat-icon' id='{seat_id}' src="{% static 'img/free.png' %}"></td>
                         {% endif %}
                     {% endif %}
                 {% endfor %}

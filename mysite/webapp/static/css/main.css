@@ -9,7 +9,6 @@ body {
     font-size: 20px;
     font-family: 'Titillium Web', sans-serif;
     color: rgb(78, 78, 78);
-    margin-bottom: 20px;
 }
 
 h3 {
@@ -242,7 +241,7 @@ h3 {
 .booking-description {
     margin: -240px 0 100px 140px;
     /* background: rgb(104, 99, 99); */
-    width: 450px;
+    width: 500px;
     height: 190px;
     font-family: Helvetica, sans-serif;
     text-align: left;
@@ -267,11 +266,27 @@ h3 {
     margin-right: 4px;
     font-size: 12px;
     border-radius: 5px;
-    background: white;
+    background: rgb(240, 232, 166);
     transition: 0.5s;
+    border: solid rgba(240, 233, 166, 0.836);
+    outline:none;
 }
 
 .showtime-button:hover {
+    transform: scale(1.02);
+}
+
+.book-button {
+    margin-top: 8px;
+    font-size: 12px;
+    border-radius: 5px;
+    background:rgb(240, 232, 166);
+    transition: 0.5s;
+    border: solid rgba(240, 233, 166, 0.836);
+    outline:none;
+}
+
+.book-button:hover {
     transform: scale(1.02);
 }
 
@@ -289,7 +304,49 @@ th,td {
 } */
 
 .seat-icon {
-    width: 15px;
-    height: 15px;
-    border-radius: 8px;
+    width: 17px;
+    height: 17px;
+    border-radius: 10px;
+}
+
+.form {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-name {
+    margin-top: 15px;
+    margin-right: 12px;
+    width: 50px;
+    font-size: 15px;
+}
+.form-seat {
+    margin-top: 15px;
+    margin-right: 0px;
+    width: 50px;
+    font-size: 15px;
+}
+
+.booker-name{
+    margin-top: 10px;
+    font-size: 14px;
+    width: 120px;
+    height: 30px;
+    outline:none;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.booking-seat{
+    font-size: 14px;
+    margin-top: 10px;
+    margin-right: 5px;
+    font-size: 14px;
+    width: 80px;
+    height: 30px;
+    outline:none;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
 }

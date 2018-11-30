@@ -40,8 +40,4 @@ class TicketBooker(models.Model):
     seat = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.name
-
-    # def create_booker(self, theater):
-    #     booker = self.create(theater=theater)
-    #     return booker
+        return f'{self.name}, {self.theater}, {self.seat}'

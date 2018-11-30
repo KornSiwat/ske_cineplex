@@ -34,8 +34,11 @@ def movie_info(request, id):
 def flatten(input):
     new_list = []
     for i in input:
-        for j in i:
-            new_list.append(j)
+        if isinstance(i, str) == True:
+            new_list.append(i)
+        else:
+            for j in i:
+                new_list.append(j)
     return new_list
 
 def booking(request, id):
@@ -49,6 +52,7 @@ def booking(request, id):
             TicketBooker.save()
             return redirect(home)
     elif request.method == "GET":
+        theater = Theater.objects.get(id=id)
         rawbooked = list(TicketBookerModel.objects.filter(theater=theater.theater_id).values_list('seat', flat=True))
         booked = []
         for i in rawbooked:

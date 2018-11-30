@@ -1,11 +1,18 @@
-var emptyCells, i;
 
-$('.list.with-empty-cells').each(function() {
-  emptyCells = [];
-  for (i = 0; i < $(this).find('.empty-theater_card').length; i++) {
-    emptyCells.push($('<ul>', {
-      class: 'empty-theater_card'
-    }));
+function select(elem) {
+  if (elem.src === `http://${location.host}/static/img/free.png`) {
+    elem.src = `http://${location.host}/static/img/selected.png`;
+    input = document.getElementById('seat-input-box');
+    if (input.value.length == 0) {
+      input.value += elem.id;
+    }
+    else {
+      input.value += `,${elem.id}`;
+    }
   }
-  $(this).append(emptyCells);
-});
+  else if (elem.src === `http://${location.host}/static/img/selected.png`)  {
+    elem.src = `http://${location.host}/static/img/free.png`
+    input.value = input.value.replace(`,${elem.id}`, "");
+    input.value = input.value.replace(`${elem.id},`, "");
+    input.value = input.value.replace(`${elem.id}`, "");
+}}

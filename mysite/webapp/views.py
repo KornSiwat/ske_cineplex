@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from .models import Theater, Movie,Booker
+from .models import Theater
+from .models import Movie
+from .models import TicketBooker
 from string import ascii_uppercase
 from datetime import datetime
 from .forms import CreateBooker
@@ -31,12 +33,12 @@ def movie_info(request, id):
 
 def booking(request, id):
     theater = Theater.objects.get(id=id)
-    # bookObj = Booker.objects.create(theater=theater.theater_id)
     form = CreateBooker(request.POST, instance=None)
     if request.method == 'POST':
         if form.is_valid():
-            Booker = form.save(commit=False)
-            Booker.save()
+            TicketBooker = form.save(commit=False)
+            TicketBooker.theater = theater.theater_id
+            TicketBooker.save()
             return redirect (home)
     elif request.method == "GET":
         rows = ascii_uppercase[:theater.rows]

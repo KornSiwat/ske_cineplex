@@ -36,7 +36,7 @@ class Theater(models.Model):
         return f'{self.theater_id} showing: {self.movie}'
 
 
-class Booker(models.Model):
+class TicketBooker(models.Model):
     name = models.CharField(max_length=30)
     theater = models.CharField(max_length=10)
     seat = models.CharField(max_length=30)
@@ -44,6 +44,6 @@ class Booker(models.Model):
     def __str__(self):
         return self.name
 
-    def create_booker(self, theater):
-        booker = self.create(theater=theater)
-        return booker
+    # def create_booker(self, theater):
+    #     booker = self.create(theater=theater)
+    #     return booker

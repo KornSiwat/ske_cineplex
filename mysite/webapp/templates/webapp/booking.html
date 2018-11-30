@@ -18,7 +18,6 @@
                         {{form.name}}
                         <h3 class='form-seat black' >Seat: </h3>
                         {{form.seat}}
-                        {{form.theater}}
                         <button class="book-button" type="submit">Book</button>
                     </div>
                 </form>
@@ -37,7 +36,7 @@
                         {% if 'booked' in seat_id %}
                             <td><img class='seat-icon' src="{% static 'img/booked.png' %}"></td>
                         {% else %}
-                            <td><img class='seat-icon' id='{seat_id}' src="{% static 'img/free.png' %}"></td>
+                            <td><img onclick='select(this)' class='seat-icon free-seat' id='{{seat_id}}' src="{% static 'img/free.png' %}"></td>
                         {% endif %}
                     {% endif %}
                 {% endfor %}

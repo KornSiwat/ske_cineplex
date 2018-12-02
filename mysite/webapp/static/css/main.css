@@ -62,8 +62,8 @@ h3 {
     background: white;
     /* border: darkgray solid 2px; */
     border-radius: 5px;
-    width: 250px;
-    height: 390px;
+    width: 200px;
+    height: 315px;
     margin: 10px 20px;
     transition: transform .2s;
 }
@@ -85,8 +85,8 @@ h3 {
     background: white;
     /* border: darkgray solid   2px; */
     border-radius: 5px;
-    width: 250px;
-    height: 400px;
+    width: 200px;
+    height: 315px;
     margin: 10px auto;
 }
 
@@ -100,9 +100,9 @@ h3 {
 }
 
 .poster{
-    margin: 13px 15px;
-    width: 215px;
-    height: 318px;
+    margin: 11px 16px;
+    width: 170px;
+    height: 251px;
 }
 
 .contain {

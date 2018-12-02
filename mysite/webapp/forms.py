@@ -4,14 +4,20 @@ from .models import TicketBooker
 class CreateBooker(forms.ModelForm):
     name = forms.CharField(max_length=255, widget=forms.TextInput(
         attrs={
-            'class' : 'booker-name black'
+            'class' : 'booker-name black',
+        }
+    ))
+    
+    tel = forms.CharField(max_length=15, widget=forms.TextInput(
+        attrs={
+            'class' : 'booker-tel black'
         }
     ))
 
     seat = forms.CharField(max_length=255, widget=forms.TextInput(
         attrs={
             'class' : 'booking-seat black',
-            'placeholder' : 'None',
+            'placeholder' : '-',
             'id' : 'seat-input-box',
             'readonly' : '',
         }
@@ -19,14 +25,23 @@ class CreateBooker(forms.ModelForm):
 
     theater = forms.CharField(max_length=255, widget=forms.TextInput(
         attrs={
-            'class' : 'booking-seat black',
-            'placeholder' : 'None',
             'id' : 'theater-field',
             'value' : 'hii'
 
         }
     ))
+
+    showtime = forms.CharField(max_length=255, widget=forms.TextInput(
+        attrs={
+            'id' : 'showtime-field',
+            'value' : 'hii'
+
+        }
+    ))
+
+
+
     class Meta:
         model = TicketBooker
-        fields = ('name', 'seat', 'theater')
+        fields = ('name', 'seat', 'theater', 'showtime')
         

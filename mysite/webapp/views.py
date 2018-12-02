@@ -12,7 +12,7 @@ def default(request):
 
 def home(request):
     theater_lists = Theater.objects.all()
-    return render(request, 'webapp/index.html',
+    return render(request, 'webapp/home.html',
             {'theater_lists' : theater_lists,
             'route' : 'Now Showing',
     })
@@ -41,8 +41,36 @@ def flatten(input):
                 new_list.append(j)
     return new_list
 
+def update_seat(request, id, showtime):
+    theater = Theater.objects.get(id=id)
+    rawbooked = list(TicketBookerModel.objects.filter(theater=theater.theater_id,showtime=showtime).values_list('seat', flat=True))
+    booked = []
+    for i in rawbooked:
+        if ',' in i:
+            booked.append(i.split(','))
+        else:
+            booked.append(i)
+    booked = flatten(booked)
+    rows = ascii_uppercase[:theater.rows]
+    rows = [x for x in rows]
+    rows = rows[::-1]
+    showtimes = theater.showtimes.split(',')
+    seats_list = []
+    for i,row in enumerate(rows):
+        seats_list.append([])
+        for seat_no in range(1,theater.seats+1):
+            if f'{row}{seat_no}' in booked:
+                seats_list[i].append(f'{row}booked')
+            else:
+                seats_list[i].append(f'{row}{seat_no}')
+    return render(request, 'webapp/includes/seat_selection.html',
+                {   'rows' : rows,
+                    'seats' : range(1,theater.seats+1),
+                    'showtimes' : showtimes,
+                    'seats_list' : seats_list,})
+
+
 def booking(request, id):
-    global TicketBooker
     theater = Theater.objects.get(id=id)
     form = CreateBooker(request.POST)
     if request.method == 'POST':
@@ -67,8 +95,9 @@ def booking(request, id):
         day = datetime.now().day
         month = datetime.now().month
         year = datetime.now().year
-        today = f'{day}, {month}, {year}'
-        showtimes = ['11:40','12:30']
+        today = f'{day}/{month}/{year}'
+        first_show = theater.first_show
+        showtimes = theater.showtimes.split(',')
         seats_list = []
         for i,row in enumerate(rows):
             seats_list.append([])
@@ -84,6 +113,7 @@ def booking(request, id):
                     'rows' : rows,
                     'seats' : range(1,theater.seats+1),
                     'today' : today,
+                    'first_show' : first_show,
                     'showtimes' : showtimes,
                     'seats_list' : seats_list,
                     'form' : form,

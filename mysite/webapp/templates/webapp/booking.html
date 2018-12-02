@@ -4,46 +4,40 @@
     <div class="booking-detail">
         <img class='booking-pic' src='{{theater.movie.img.url}}' alt='movie pic'>
         <div class="booking-description">
-            <h2 class='black booking-name'>{{theater.theater_id}}: {{theater.movie.name}} </h2>
-            <h3 class='black booking-date'>Date: {{today}} </h3>
-            <div class='black booking-showtimes'>Showtimes:
+            <div class="booking-top-container">
+                <h2 class='black booking-name' id="{{theater.id}}">{{theater.theater_id}}: {{theater.movie.name}} </h2>
+            </div>
+            <div class='black booking-showtimes'>
+                <p>Showtimes: </p>
                 {% for showtime in showtimes %}
-                <button class="showtime-button">{{showtime}}</button>
+                    {% if showtime == first_show %}
+                        <button class="showtime-button chosen" onclick="choose_time(this)" id='{{showtime}}'>{{showtime}}</button>
+                    {% else %}
+                        <button class="showtime-button" onclick="choose_time(this)" id='{{showtime}}'>{{showtime}}</button>
+                    {% endif %}
                 {% endfor %}
             </div>
             <form method="POST">
                 {% csrf_token %}
+                <div class="form">
+                    <h3 class='form-name black' >Name: </h3>
+                    {{form.name}}
+                    <h3 class='form-tel black' >Tel: </h3>
+                    {{form.tel}}
+                    <h2 class='black booking-date'>Date: </h2>
+                    <h2 class='black date'>{{today}}</h2>
+                    <h3 class='form-seat black'>Seat: </h3>
+                    {{form.seat}}
+                    <button class="book-button" type="submit">Book</button>
+                </div>
                 {{form.theater}}
-                    <div class="form">
-                        <h3 class='form-name black' >Name: </h3>
-                        {{form.name}}
-                        <h3 class='form-seat black'>Seat: </h3>
-                        {{form.seat}}
-                        <button class="book-button" type="submit">Book</button>
-                    </div>
-                </form>
-            </div>
+                {{form.showtime}}
+            </form>
+        </div>
         </div>
     </div>
-    <div class="screen white">Screen</div>
-    <table class="seats white">
-        {% for row_name in rows %}
-        <tr>
-            <th>{{row_name}}</th> 
-            {% load staticfiles %}
-            {% for seat_row in seats_list %}
-                {% for seat_id in seat_row %}
-                    {% if row_name in seat_id %}
-                        {% if 'booked' in seat_id %}
-                            <td><img class='seat-icon' src="{% static 'img/booked.png' %}"></td>
-                        {% else %}
-                            <td><img onclick='select(this)' class='seat-icon free-seat' id='{{seat_id}}' src="{% static 'img/free.png' %}"></td>
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-        </tr>
-        {% endfor %}
-    </table>
+    <div id="gonna-update">
+        {% include 'webapp/includes/seat_selection.html' %}
+    </div>
 
 {% endblock %}

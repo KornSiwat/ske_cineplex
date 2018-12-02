@@ -1,0 +1,20 @@
+<div class="screen white">Screen</div>
+    <table class="seats white">
+        {% for row_name in rows %}
+        <tr>
+            <th>{{row_name}}</th> 
+            {% load staticfiles %}
+            {% for seat_row in seats_list %}
+                {% for seat_id in seat_row %}
+                    {% if row_name in seat_id %}
+                        {% if 'booked' in seat_id %}
+                            <td><img class='seat-icon' src="{% static 'img/booked.png' %}"></td>
+                        {% else %}
+                            <td><img onclick='select(this)' class='seat-icon free-seat' id='{{seat_id}}' src="{% static 'img/free.png' %}"></td>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>

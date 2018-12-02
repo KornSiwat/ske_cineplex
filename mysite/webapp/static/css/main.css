@@ -62,7 +62,7 @@ h3 {
     background: white;
     /* border: darkgray solid 2px; */
     border-radius: 5px;
-    width: 200px;
+    width: 196px;
     height: 315px;
     margin: 10px 20px;
     transition: transform .2s;
@@ -85,7 +85,7 @@ h3 {
     background: white;
     /* border: darkgray solid   2px; */
     border-radius: 5px;
-    width: 200px;
+    width: 196px;
     height: 315px;
     margin: 10px auto;
 }
@@ -100,7 +100,7 @@ h3 {
 }
 
 .poster{
-    margin: 11px 16px;
+    margin: 11px 13px;
     width: 170px;
     height: 251px;
 }
@@ -125,8 +125,8 @@ h3 {
     border-radius: 3px;
     display: flex;
     justify-content: center;
-    width: 215px;
-    height: 318px;
+    width: 190px;
+    height: 281px;
 }
 
 .movie_description {
@@ -134,16 +134,19 @@ h3 {
     text-align-last: center;
     padding: 0 5%;
     text-indent: 5%;
+    font-size: 20px;
 }
 
 .release {
     text-align: center;
     text-indent: 0 !important;
+    font-size: 18px;
 }
 
 .movie_info_name {
     text-align: center;
     text-indent: 0 !important;
+    font-size: 33px;
 
 }
 
@@ -151,7 +154,7 @@ h3 {
     border-radius: 120px;
     display: flex;
     margin: 15px auto;
-    width: 250px;
+    width: 240px;
     height: auto;
     border: solid white;    
 }
@@ -159,13 +162,15 @@ h3 {
 .contact-name{
     text-align: center !important;
     text-indent: 0 !important;
+    font-size: 33px;
 }
 .contact-description {
-    margin: 10px 50px;
+    padding: 5px 100px;
     text-indent: 5%;
     text-align: justify;
-    text-align-last: center;
+    text-align-last: left;
     color:  rgb(238, 238, 238);
+    font-size: 20px;
 
 }
 .branch-name {
@@ -178,7 +183,7 @@ h3 {
 .branches {
     display: block;
     margin: 20px auto;
-    width: 75%;
+    width: 60%;
     height: auto;
     border-radius: 1%;
 }
@@ -201,8 +206,8 @@ h3 {
 
 .frame {
     margin: -149px auto 15px auto; 
-    width: 238px;
-    height: 150px;
+    width: 210px;
+    height: 148px;
     background: rgb(196, 196, 196);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -248,26 +253,40 @@ h3 {
     text-indent: 10px;
 }
 
+.booking-top-container {
+    display: flex;
+    margin-top: 40px;
+}
+
 .booking-name {
-    margin-top: 45px;
     font-size: 25px;
 }
 
 .booking-date {
-    text-indent: 11px;
-    font-size: 17px;
+    margin-top: 10px;
+    font-size: 15px;
 }
+
+.date {
+    margin-top: 10px;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
 .booking-showtimes {
+    display: flex;
+    margin: 5px 0 -5px 0;
     text-indent: 11px;
     font-size: 17px;
 }
 
 .showtime-button {
-    margin-right: 4px;
-    font-size: 12px;
+    height: 24px;
+    margin: 1px 0 0 4px;
+    font-size: 11px;
     border-radius: 5px;
     background: rgb(240, 232, 166);
-    transition: 0.5s;
+    transition: 0.25s;
     border: solid rgba(240, 233, 166, 0.836);
     outline:none;
 }
@@ -277,8 +296,11 @@ h3 {
 }
 
 .book-button {
-    margin-top: 8px;
-    font-size: 12px;
+    margin-top: 7px;
+    margin-left: 2px;
+    width: 55px;
+    height: 25px;
+    font-size: 13px;
     border-radius: 5px;
     background:rgb(240, 232, 166);
     transition: 0.5s;
@@ -286,9 +308,9 @@ h3 {
     outline:none;
 }
 
-.book-button:hover {
+/* .book-button:hover {
     transform: scale(1.02);
-}
+} */
 
 .seats {
     margin: 0 auto;
@@ -310,52 +332,71 @@ th,td {
 }
 
 .form {
+    width: 400px;
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .form-name {
-    margin-top: 15px;
+    margin-top: 6px;
     margin-right: 12px;
     width: 50px;
     font-size: 15px;
 }
+
+.form-tel {
+    margin-top: 6px;
+    /* margin-right: 7px; */
+    width: 50px;
+    font-size: 15px;
+}
 .form-seat {
-    margin-top: 15px;
-    margin-right: 0px;
+    margin-top: 10px;
+    margin-left: 23px;
     width: 50px;
     font-size: 15px;
 }
 
-.booker-name{
-    margin-top: 10px;
+.booker-name, .booker-tel{
+    margin-top: 5px;
     font-size: 14px;
     width: 120px;
-    height: 30px;
+    height: 22px;
     outline:none;
     border: none;
     border-radius: 5px;
+}
 
+.booker-tel{
+    margin-left: -8px;
+    width: 150px;
 }
 
 .booking-seat{
     font-size: 14px;
-    margin-top: 10px;
-    margin-right: 5px;
+    margin-top: 7px;
+    margin-right: 4px;
+    margin-left: 4px;
     font-size: 14px;
-    width: 80px;
-    height: 30px;
+    width: 100px;
+    height: 25px;
     outline:none;
     border: none;
     border-radius: 5px;
     text-align: center;
 }
 
-#theater-field {
+#theater-field,#showtime-field {
+    position: fixed;
     width: 0;
     height: 0;
     margin: 0;
     padding: 0;
     z-index: -1;
     visibility: hidden;
+}
+
+.chosen {
+    border: rgb(100, 100, 100) solid 2px;
 }

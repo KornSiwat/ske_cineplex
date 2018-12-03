@@ -9,7 +9,6 @@ const select = function(elem) {
   let input = $('#seat-input-box');
   if (elem.src === `http://${location.host}/static/img/free.png`) {
     elem.src = `http://${location.host}/static/img/selected.png`;
-    // alert(input[0]);
     if (input[0].value.length == 0) {
       input[0].value += elem.id;
     }

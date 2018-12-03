@@ -26,6 +26,9 @@
                 <li {% if route == 'Movies' or  route == 'Movie Info' %}class="nav-item active" {% else %} class="nav-item" {% endif %}>
                     <a class="nav-link" href="/movie">Movie</a>
                 </li>
+                <li {% if route == 'History' %}class="nav-item active" {% else %} class="nav-item" {% endif %}>
+                    <a class="nav-link" href="/history">History</a>
+                </li>
                 <li {% if route == 'Branches' %}class="nav-item active" {% else %} class="nav-item" {% endif %}>
                     <a class="nav-link" href="/branches">Branches</a>
                 </li>

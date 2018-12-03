@@ -1,0 +1,20 @@
+{% extends 'webapp/base.html' %}
+{%block content%}
+    {% include 'webapp/includes/route.html' with route=route %}
+    {% load staticfiles %}
+    <img class='search-img' src='{% static 'img/search.png' %}' alt='search-icon'>
+    <div class=' white search'>
+        <div class='name-s'>
+            <h3 class="search-name">Name: </h3>
+            <input id='history-name'>
+        </div>
+        <div class='tel-s'>
+            <h3 class="search-name">Tel no: </h3>
+            <input id='history-tel'>
+        </div>
+    </div>
+    <div id='history-update'>
+        {% include 'webapp/includes/history_detail.html' %}
+    </div>
+    
+{%endblock%}

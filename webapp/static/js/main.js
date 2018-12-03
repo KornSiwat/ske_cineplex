@@ -39,12 +39,7 @@ const choose_time = function(elem) {
       console.log("error");
     }
   })
-  }
-
-
-// const add_card = function() {
-//   $('.list')[0].innerHTML += ("<div class='empty_card card' ></div>");
-// }
+}
 
 const check_card = function() {
   let card = $('.card');
@@ -62,7 +57,7 @@ const check_card = function() {
     }
   }
 }
-setTimeout(check_card, 50);
+setTimeout(check_card, 0);
 
 window.onresize = function() {
   check_card();

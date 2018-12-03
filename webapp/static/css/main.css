@@ -400,17 +400,51 @@ th,td {
     border: rgb(100, 100, 100) solid 2px;
 }
 
-@media only screen and (max-width: 735px) {
-    body {
-        background-color: rgb(201, 201, 201);
-    }
+/* History page */
 
-    .booking-pic{
-        position: fixed;
-        
-        margin: -40px 40px 0 -70px;
-        width: 150px;
-        height: 222px;
-        box-shadow: 0 15px 37px -5px rgba(48, 48, 48, 0.7);
-    }
+.search-img {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 30px auto;
+    filter: grayscale(30%);
+}
+
+.search {
+    font-size: 25px;
+}
+
+.search-name,.search-tel {
+    margin: 6px 10px 0 0;
+}
+
+.name-s {
+    display: flex;
+    justify-content: center;
+    margin-left: -5%;
+}
+#history-name,#history-tel {
+    margin-top: 5px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.tel-s {
+    margin: 12px 0;
+    margin-left: -5%;
+    display: flex;
+    justify-content: center;
+}
+.head-detail {
+    margin-top: 25px;
+    margin-left: 12%;
+    font-size: 20px;
+}
+
+.history-box {
+    margin: 15px 10% 20px 10%;
+    background: #f6f6f657;
+    padding: 20px 20px;
+    border-radius: 5px;
+    height: 180px;
 }

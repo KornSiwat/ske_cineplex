@@ -120,6 +120,11 @@ def booking(request, id):
                     # 'booked': booked
                 })
 
+def history (request):
+    return render(request, 'webapp/history.html',{
+        'route' : 'History',
+    })
+
 def branches(request):
     return render(request, 'webapp/branches.html', { 'route': 'Branches'})
 

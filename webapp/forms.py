@@ -31,6 +31,14 @@ class CreateBooker(forms.ModelForm):
         }
     ))
 
+    movie = forms.CharField(max_length=255, widget=forms.TextInput(
+        attrs={
+            'id' : 'movie-field',
+            'value' : 'no-movie'
+
+        }
+    ))
+
     showtime = forms.CharField(max_length=255, widget=forms.TextInput(
         attrs={
             'id' : 'showtime-field',
@@ -39,9 +47,17 @@ class CreateBooker(forms.ModelForm):
         }
     ))
 
+    date = forms.CharField(max_length=255, widget=forms.TextInput(
+        attrs={
+            'id' : 'date-field',
+            'value' : 'today'
+
+        }
+    ))
+
 
 
     class Meta:
         model = TicketBooker
-        fields = ('name', 'tel', 'seat', 'theater', 'showtime')
+        fields = ('name', 'tel', 'seat', 'theater', 'movie', 'showtime','date')
         

@@ -386,7 +386,7 @@ th,td {
     text-align: center;
 }
 
-#theater-field,#showtime-field {
+#theater-field,#showtime-field,.booking-movie-name,#movie-field,#date-field {
     position: fixed;
     width: 0;
     height: 0;
@@ -415,7 +415,7 @@ th,td {
 }
 
 .search-name,.search-tel {
-    margin: 6px 10px 0 0;
+    margin: 10px 10px 0 0;
 }
 
 .name-s {
@@ -425,7 +425,7 @@ th,td {
 }
 #history-name,#history-tel {
     margin-top: 5px;
-    height: 30px;
+    height: 35px;
     border-radius: 10px;
 }
 
@@ -442,9 +442,27 @@ th,td {
 }
 
 .history-box {
+    overflow: scroll;
     margin: 15px 10% 20px 10%;
     background: #f6f6f657;
     padding: 20px 20px;
     border-radius: 5px;
     height: 180px;
 }
+
+.search-button {
+    display: block;
+    margin: -6px auto 5px auto;
+    border: none;
+    outline: none;
+    background: rgb(182, 93, 86);
+    border-radius: 10px;
+    font-size: 20px;
+    width: 100px;
+    transition: 0.5s;
+}
+
+.search-button:hover {
+    transform: scale(1.04);
+}
+

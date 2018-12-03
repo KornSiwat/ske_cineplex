@@ -79,6 +79,8 @@ def booking(request, id):
             TicketBooker.theater = theater.theater_id
             TicketBooker.save()
             return redirect(home)
+        else:
+            return render(request, 'webapp/includes/error.html')
     elif request.method == "GET":
         theater = Theater.objects.get(id=id)
         rawbooked = list(TicketBookerModel.objects.filter(theater=theater.theater_id,showtime=theater.first_show).values_list('seat', flat=True))
@@ -120,9 +122,20 @@ def booking(request, id):
                     # 'booked': booked
                 })
 
-def history (request):
+def history(request):
     return render(request, 'webapp/history.html',{
         'route' : 'History',
+    })
+
+def update_history(request, name, tel):
+    try:
+        history = TicketBookerModel.objects.filter(name=name,tel=tel).order_by('date','showtime')
+    except TicketBookerModel.DoesNotExist:
+        history = 'Not Found'
+    return render(request, 'webapp/includes/history_detail.html', {
+        'history' : history,
+        'name' : name,
+        'tel' : tel,
     })
 
 def branches(request):

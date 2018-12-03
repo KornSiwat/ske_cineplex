@@ -1,4 +1,10 @@
 <h3 class="head-detail white">Booked Seats List</h3>
 <div class="history-box white">
-    asddadasdsadasd
+    {% if history == 'Not Found'%}
+        <div class="middle">{{history}}</div>
+    {% else %}
+        {% for booking in history %}
+            <h3 class="booking-history">{{booking.theater}} {{booking.movie}} Time: {{booking.showtime}} Date: {{booking.date}} Seat: {{booking.seat}}</h3>
+        {% endfor %}
+    {% endif %}
 </div>

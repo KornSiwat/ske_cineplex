@@ -40,8 +40,10 @@ class TicketBooker(models.Model):
     name = models.CharField(max_length=30)
     tel = models.CharField(max_length=15, null=True)
     theater = models.CharField(max_length=10)
+    movie = models.CharField(max_length=50, null=True)
     seat = models.CharField(max_length=30)
     showtime = models.CharField(max_length=10, default='10:40')
+    date = models.CharField(max_length=50, null=True)
 
     def __str__(self):
-        return f'{self.name}, {self.theater}, {self.seat}'
+        return f'{self.theater}: {self.movie} {self.date} Seat: {self.seat} Booked by {self.name} Tel:{self.tel} '

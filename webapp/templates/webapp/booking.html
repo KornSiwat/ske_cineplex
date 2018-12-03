@@ -6,6 +6,7 @@
         <div class="booking-description">
             <div class="booking-top-container">
                 <h2 class='black booking-name' id="{{theater.id}}">{{theater.theater_id}}: {{theater.movie.name}} </h2>
+                <h2 class="black booking-movie-name" id="{{theater.movie.name}}">Test</h2>
             </div>
             <div class='black booking-showtimes'>
                 <p>Showtimes: </p>
@@ -25,13 +26,15 @@
                     <h3 class='form-tel black' >Tel: </h3>
                     {{form.tel}}
                     <h2 class='black booking-date'>Date: </h2>
-                    <h2 class='black date'>{{today}}</h2>
+                    <h2 class='black date' id="{{today}}">{{today}}</h2>
                     <h3 class='form-seat black'>Seat: </h3>
                     {{form.seat}}
                     <button class="book-button" type="submit">Book</button>
                 </div>
                 {{form.theater}}
                 {{form.showtime}}
+                {{form.movie}}
+                {{form.date}}
             </form>
         </div>
     </div>

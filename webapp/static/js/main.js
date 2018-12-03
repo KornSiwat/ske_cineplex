@@ -1,5 +1,11 @@
 
 const select = function(elem) {
+  let movie_field = $('#movie-field');
+  let movie_name = $('.booking-movie-name');
+  movie_field[0].value = movie_name[0].id
+  let date_field = $('#date-field');
+  let today = $('.date');
+  date_field[0].value = today[0].id
   let input = $('#seat-input-box');
   if (elem.src === `http://${location.host}/static/img/free.png`) {
     elem.src = `http://${location.host}/static/img/selected.png`;
@@ -26,10 +32,9 @@ const choose_time = function(elem) {
   elem.className = "showtime-button chosen";
   showtime_form = $('#showtime-field');
   showtime_form[0].value = elem.id;
-  console.log(showtime_form[0].value )
   let id = $('.booking-name')[0].id;
   $.ajax({
-    url: `/update/${id}/${elem.id}`,
+    url: `/update_seat/${id}/${elem.id}`,
     method: 'GET',
     data: {},
     success: function(data){
@@ -43,15 +48,12 @@ const choose_time = function(elem) {
 
 const check_card = function() {
   let card = $('.card');
-  console.log(card.length)
   let winWidth = (window.innerWidth - (0.1* window.innerWidth));
-  console.log(winWidth)
   for (let i = 0; i < 5; i++){
     $( ".empty_card" ).remove();
   }
   for (let i = 0; i < 5; i++){
     card = $('.card').length;
-    console.log((card % Math.floor(winWidth / 230)))
     if ((card % Math.floor(winWidth / 230)) > 0) {
       $('.list')[0].innerHTML += ("<div class='empty_card card' ></div>");
     }
@@ -63,3 +65,17 @@ window.onresize = function() {
   check_card();
 };
 
+const update_history = function() {
+  let name = $('#history-name');
+  let tel = $('#history-tel');
+  $.ajax({
+    url: `/update_history/${name[0].value}/${tel[0].value}`,
+    method: 'GET',
+    data: {},
+    success: function(data){
+      $('#history-update').html(data);
+    }, error: function(error){
+      console.log('error')
+    }
+  })
+}

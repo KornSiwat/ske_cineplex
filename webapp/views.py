@@ -134,8 +134,6 @@ def update_history(request, name, tel):
         history = 'Not Found'
     return render(request, 'webapp/includes/history_detail.html', {
         'history' : history,
-        'name' : name,
-        'tel' : tel,
     })
 
 def branches(request):

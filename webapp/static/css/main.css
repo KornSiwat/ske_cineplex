@@ -406,7 +406,7 @@ th,td {
     display: block;
     width: 200px;
     height: auto;
-    margin: 30px auto;
+    margin: 20px auto;
     filter: grayscale(30%);
 }
 
@@ -464,5 +464,10 @@ th,td {
 
 .search-button:hover {
     transform: scale(1.04);
+}
+
+.not-found {
+    /* width: 100px; */
+    /* background: red; */
 }
 

@@ -42,17 +42,21 @@ const choose_time = function(elem) {
   }
 
 
-const add_card = function() {
-  $('.list')[0].innerHTML += ("<div class='empty_card' ></div>");
-}
+// const add_card = function() {
+//   $('.list')[0].innerHTML += ("<div class='empty_card card' ></div>");
+// }
 
 const check_card = function() {
-  let winWidth = (window.innerWidth - (0.1* window.innerWidth))
+  let card = $('.card');
+  console.log(card.length)
+  let winWidth = (window.innerWidth - (0.1* window.innerWidth));
+  console.log(winWidth)
   for (let i = 0; i < 5; i++){
     $( ".empty_card" ).remove();
   }
   for (let i = 0; i < 5; i++){
     card = $('.card').length;
+    console.log((card % Math.floor(winWidth / 230)))
     if ((card % Math.floor(winWidth / 230)) > 0) {
       $('.list')[0].innerHTML += ("<div class='empty_card card' ></div>");
     }

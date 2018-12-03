@@ -81,7 +81,7 @@ def booking(request, id):
             return redirect(home)
     elif request.method == "GET":
         theater = Theater.objects.get(id=id)
-        rawbooked = list(TicketBookerModel.objects.filter(theater=theater.theater_id).values_list('seat', flat=True))
+        rawbooked = list(TicketBookerModel.objects.filter(theater=theater.theater_id,showtime=theater.first_show).values_list('seat', flat=True))
         booked = []
         for i in rawbooked:
             if ',' in i:

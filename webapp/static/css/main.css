@@ -15,6 +15,7 @@ h3 {
     font-size: 22px;
 }
 
+/* global */
 .logo {
     position: absolute;
     top: 4px;
@@ -34,6 +35,14 @@ h3 {
     display: flex;
     justify-content: center;
     text-align: center
+}
+
+.white {
+    color: rgb(238, 238, 238);
+}
+
+.black {
+    color: rgb(43, 43, 43);
 }
 
 .headroute {
@@ -57,20 +66,8 @@ h3 {
     border: rgb(216, 216, 216) solid 0.1px;
 }
 
-.theater_card {
-    float: left;
-    background: white;
-    /* border: darkgray solid 2px; */
-    border-radius: 5px;
-    width: 196px;
-    height: 315px;
-    margin: 10px 20px;
-    transition: transform .2s;
-}
 
-.theater_card:hover{
-    transform: scale(1.05);
-}
+/* card releated */
 
 .theater_name{
     background: rgb(240, 240, 240);
@@ -81,15 +78,6 @@ h3 {
     border-top-right-radius: 5px;
 }
 
-.movie_card {
-    background: white;
-    /* border: darkgray solid   2px; */
-    border-radius: 5px;
-    width: 196px;
-    height: 315px;
-    margin: 10px auto;
-}
-
 .movie_name{
     background: rgb(240, 240, 240);
     height: 45px;
@@ -97,6 +85,29 @@ h3 {
     border-bottom: darkgray solid 2px;
     /* border-top-left-radius: 5px;
     border-top-right-radius: 5px; */
+}
+
+.card {
+    float: left;
+    background: white;
+    /* border: darkgray solid 2px; */
+    border-radius: 5px;
+    width: 196px;
+    height: 315px;
+    margin: 10px 20px;
+    transition: transform .2s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.empty_card {
+    background: transparent;
+    visibility: hidden;
+    width: 196px;
+    height: 315px;
+    margin: 10px 20px;
 }
 
 .poster{
@@ -115,10 +126,8 @@ h3 {
     justify-content: center;
     flex-flow: row wrap;
 }
-/* .list::after {
-    content: '';
-    flex: auto;
-} */
+
+/* movie info page */
 
 .movie_info_pic {
     margin: 10px auto 10px auto;
@@ -127,6 +136,13 @@ h3 {
     justify-content: center;
     width: 190px;
     height: 281px;
+}
+
+.movie_info_name {
+    text-align: center;
+    text-indent: 0 !important;
+    font-size: 33px;
+
 }
 
 .movie_description {
@@ -143,12 +159,7 @@ h3 {
     font-size: 18px;
 }
 
-.movie_info_name {
-    text-align: center;
-    text-indent: 0 !important;
-    font-size: 33px;
-
-}
+/* contact page */
 
 .owner {
     border-radius: 120px;
@@ -173,6 +184,8 @@ h3 {
     font-size: 20px;
 
 }
+
+/* branches page */
 .branch-name {
     text-align: center;
     font-size: 20%;
@@ -188,14 +201,8 @@ h3 {
     border-radius: 1%;
 }
 
-.white {
-    color: rgb(238, 238, 238);
-}
 
-.black {
-    color: rgb(43, 43, 43);
-}
-
+/* booking page */
 .screen {
     text-align: center;
     width: 300px;
@@ -308,22 +315,14 @@ h3 {
     outline:none;
 }
 
-/* .book-button:hover {
-    transform: scale(1.02);
-} */
-
 .seats {
     margin: 0 auto;
 }
 
+/* seat selection */
 th,td {
     padding: 0 4px;
 }
-
-/* table, th, td {
-    border: black solid;
-    border-collapse: collapse;  
-} */
 
 .seat-icon {
     width: 17px;
@@ -399,4 +398,19 @@ th,td {
 
 .chosen {
     border: rgb(100, 100, 100) solid 2px;
+}
+
+@media only screen and (max-width: 735px) {
+    body {
+        background-color: rgb(201, 201, 201);
+    }
+
+    .booking-pic{
+        position: fixed;
+        
+        margin: -40px 40px 0 -70px;
+        width: 150px;
+        height: 222px;
+        box-shadow: 0 15px 37px -5px rgba(48, 48, 48, 0.7);
+    }
 }

@@ -1,7 +1,7 @@
 {% extends 'webapp/base.html' %}
 {% block content %}
         {% include 'webapp/includes/route.html' with route=route %}
-        <img class='movie_info_pic' src='{{movie.img.url}}' alt='movie pic'">
+        <img class='movie_info_pic' src='{{movie.img}}' alt='movie pic'">
         <div class="frame"></div>
         <div class="movie_info">
             <div class='white movie_description'>

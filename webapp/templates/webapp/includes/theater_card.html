@@ -3,6 +3,6 @@
         <h3 class="center">{{theater.theater_id}}: {{theater.movie.name}}</h3>
     </div>
     <a href="/booking/{{theater.id}}">
-        <img class="poster" {% if theater_obj.movie.img %} src='{{theater.movie.img.url}}' {% endif %} alt='movie-poster'>
+        <img class="poster" src='{{theater.movie.img}}' alt='movie-poster'>
     </a>
 </div>

@@ -34,7 +34,7 @@ class CreateBooker(forms.ModelForm):
     showtime = forms.CharField(max_length=255, widget=forms.TextInput(
         attrs={
             'id' : 'showtime-field',
-            'value' : 'hii'
+            'value' : '10:40'
 
         }
     ))
@@ -43,5 +43,5 @@ class CreateBooker(forms.ModelForm):
 
     class Meta:
         model = TicketBooker
-        fields = ('name', 'seat', 'theater', 'showtime')
+        fields = ('name', 'tel', 'seat', 'theater', 'showtime')
         

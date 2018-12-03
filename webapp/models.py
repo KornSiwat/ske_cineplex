@@ -19,7 +19,7 @@ class Movie(models.Model):
 
     description = models.TextField(max_length=999, null=True)
     release = models.DateField()
-    img = models.ImageField(upload_to='img/', default='')
+    img = models.CharField(max_length=255, null=True)
 
     def __str__(self):
         return self.name

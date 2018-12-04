@@ -41,7 +41,7 @@ class TicketBooker(models.Model):
     tel = models.CharField(max_length=15, null=True)
     theater = models.CharField(max_length=10)
     movie = models.CharField(max_length=50, null=True)
-    seat = models.CharField(max_length=30)
+    seat = models.CharField(max_length=255)
     showtime = models.CharField(max_length=10, default='10:40')
     date = models.CharField(max_length=50, null=True)
 

@@ -12,9 +12,9 @@
                 <p>Showtimes: </p>
                 {% for showtime in showtimes %}
                     {% if showtime == first_show %}
-                        <button class="showtime-button chosen" onclick="choose_time(this)" id='{{showtime}}'>{{showtime}}</button>
+                        <button onclick='choose_time(this)' class="showtime-button chosen" id='{{showtime}}'>{{showtime}}</button>
                     {% else %}
-                        <button class="showtime-button" onclick="choose_time(this)" id='{{showtime}}'>{{showtime}}</button>
+                        <button onclick='choose_time(this)' class="showtime-button" id='{{showtime}}'>{{showtime}}</button>
                     {% endif %}
                 {% endfor %}
             </div>

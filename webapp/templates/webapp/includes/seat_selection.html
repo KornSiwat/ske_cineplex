@@ -10,7 +10,7 @@
                         {% if 'booked' in seat_id %}
                             <td><img class='seat-icon' src="{% static 'img/booked.png' %}"></td>
                         {% else %}
-                            <td><img class='seat-icon-aval seat-icon free-seat' id='{{seat_id}}' src="{% static 'img/free.png' %}"></td>
+                            <td><img onclick='select(this)' class='seat-icon-aval seat-icon free-seat' id='{{seat_id}}' src="{% static 'img/free.png' %}"></td>
                         {% endif %}
                     {% endif %}
                 {% endfor %}

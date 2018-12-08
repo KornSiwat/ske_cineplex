@@ -1,31 +1,22 @@
-$( window ).load(function() {
+$(window).ready(function() {
 
-  $('.seat-icon-aval').click(function(){
-    let elem = $(this);
-    let movie_field = $('#movie-field');
-    let movie_name = $('.booking-movie-name');
-    movie_field[0].value = movie_name[0].id
-    let date_field = $('#date-field');
-    let today = $('.date');
-    date_field[0].value = today[0].id
-    let input = $('#seat-input-box');
-    if (elem[0].src === `http://${location.host}/static/img/free.png`) {
-      elem[0].src = `http://${location.host}/static/img/selected.png`;
-      if (input[0].value.length == 0) {
-        input[0].value += elem[0].id;
+    let first_button = $('.chosen');
+    console.log(first_button[0].id)
+    showtime_form = $('#showtime-field');
+    showtime_form[0].value = first_button[0].id;
+    let id = $('.booking-name')[0].id;
+    $.ajax({
+      url: `/update_seat/${id}/${first_button[0].id}`,
+      method: 'GET',
+      data: {},
+      success: function(data){
+        $('#gonna-update').html(data);
+      }, error: function(error){
+        console.log(error);
+        console.log("error");
       }
-      else {
-        input[0].value += `,${elem[0].id}`;
-      }
-    }
-    else if (elem[0].src === `http://${location.host}/static/img/selected.png`)  {
-      elem[0].src = `http://${location.host}/static/img/free.png`
-      input[0].value = input[0].value.replace(`,${elem[0].id}`, "");
-      input[0].value = input[0].value.replace(`${elem[0].id},`, "");
-      input[0].value = input[0].value.replace(`${elem[0].id}`, "");
-  }});
+  });
 });
-
 
 const choose_time = function(elem) {
   let all_showtime = $(".showtime-button");
@@ -47,7 +38,32 @@ const choose_time = function(elem) {
       console.log("error");
     }
   })
-}
+};
+
+const select = function(elem) {
+  let movie_field = $('#movie-field');
+  let movie_name = $('.booking-movie-name');
+  movie_field[0].value = movie_name[0].id
+  let date_field = $('#date-field');
+  let today = $('.date');
+  date_field[0].value = today[0].id
+  let input = $('#seat-input-box');
+  if (elem.src === `http://${location.host}/static/img/free.png`) {
+    elem.src = `http://${location.host}/static/img/selected.png`;
+    // alert(input[0]);
+    if (input[0].value.length == 0) {
+      input[0].value += elem.id;
+    }
+    else {
+      input[0].value += `,${elem.id}`;
+    }
+  }
+  else if (elem.src === `http://${location.host}/static/img/selected.png`)  {
+    elem.src = `http://${location.host}/static/img/free.png`
+    input[0].value = input[0].value.replace(`,${elem.id}`, "");
+    input[0].value = input[0].value.replace(`${elem.id},`, "");
+    input[0].value = input[0].value.replace(`${elem.id}`, "");
+}}
 
 const update_history = function() {
   let name = $('#history-name');

@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$( window ).load(function() {
 
   $('.seat-icon-aval').click(function(){
     let elem = $(this);

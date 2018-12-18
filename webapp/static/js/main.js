@@ -81,14 +81,25 @@ const update_history = function() {
 }
 
 const check_card = function() {
-  let card = $('.card');
-  let winWidth = (window.innerWidth - (0.1* window.innerWidth));
-  for (let i = 0; i < 5; i++){
-    $( ".empty_card" ).remove();
+  var card = $('.card');
+  var winWidth = (window.innerWidth - (0.1* window.innerWidth));
+  if (winWidth > 765) {
+    var card_width = 230;
   }
+  else {
+    var card_width = 170;
+  }
+  console.log(`before del: ${card}`);
+  card = $('.card').length;
+  console.log(`width: ${winWidth} card: ${card} ${Math.floor(winWidth / card_width)}`);
+  console.log(`card width ${card_width}`);
+  $( ".empty_card" ).remove();
+  console.log(`after del: ${card}`);
+  card = $('.card').length;
+  console.log(card % Math.floor(winWidth / card_width));
   for (let i = 0; i < 5; i++){
     card = $('.card').length;
-    if ((card % Math.floor(winWidth / 230)) > 0) {
+    if ((card % Math.floor(winWidth / card_width)) > 0) {
       $('.list')[0].innerHTML += ("<div class='empty_card card' ></div>");
     }
   }
@@ -96,5 +107,5 @@ const check_card = function() {
 setTimeout(check_card, 0);
 
 window.onresize = function() {
-  check_card();
+  setTimeout(check_card, 100);
 };

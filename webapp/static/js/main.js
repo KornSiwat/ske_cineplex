@@ -89,14 +89,14 @@ const check_card = function() {
   else {
     var card_width = 170;
   }
-  console.log(`before del: ${card}`);
+  // console.log(`before del: ${card}`);
   card = $('.card').length;
-  console.log(`width: ${winWidth} card: ${card} ${Math.floor(winWidth / card_width)}`);
-  console.log(`card width ${card_width}`);
+  // console.log(`width: ${winWidth} card: ${card} ${Math.floor(winWidth / card_width)}`);
+  // console.log(`card width ${card_width}`);
   $( ".empty_card" ).remove();
-  console.log(`after del: ${card}`);
+  // console.log(`after del: ${card}`);
   card = $('.card').length;
-  console.log(card % Math.floor(winWidth / card_width));
+  // console.log(card % Math.floor(winWidth / card_width));
   for (let i = 0; i < 5; i++){
     card = $('.card').length;
     if ((card % Math.floor(winWidth / card_width)) > 0) {

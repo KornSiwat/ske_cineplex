@@ -9,14 +9,16 @@
                 <h2 class="black booking-movie-name" id="{{theater.movie.name}}">Test</h2>
             </div>
             <div class='black booking-showtimes'>
-                <p>Showtimes: </p>
-                {% for showtime in showtimes %}
-                    {% if showtime == first_show %}
-                        <button onclick='choose_time(this)' class="showtime-button chosen" id='{{showtime}}'>{{showtime}}</button>
-                    {% else %}
-                        <button onclick='choose_time(this)' class="showtime-button" id='{{showtime}}'>{{showtime}}</button>
-                    {% endif %}
-                {% endfor %}
+                <p id='showtime-word'>Showtimes: </p>
+                <div class="showtime-buttons-box">
+                    {% for showtime in showtimes %}
+                        {% if showtime == first_show %}
+                            <button onclick='choose_time(this)' class="showtime-button chosen" id='{{showtime}}'>{{showtime}}</button>
+                        {% else %}
+                            <button onclick='choose_time(this)' class="showtime-button" id='{{showtime}}'>{{showtime}}</button>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
             <form method="POST">
                 {% csrf_token %}
@@ -27,9 +29,11 @@
                     {{form.tel}}
                     <h2 class='black booking-date'>Date: </h2>
                     <h2 class='black date' id="{{today}}">{{today}}</h2>
-                    <h3 class='form-seat black'>Seat: </h3>
-                    {{form.seat}}
-                    <button class="book-button" type="submit">Book</button>
+                    <div class="booking-seat-box">
+                        <h3 class='form-seat black'>Seat: </h3>
+                        {{form.seat}}
+                        <button class="book-button" type="submit">Book</button>
+                    </div>
                 </div>
                 {{form.theater}}
                 {{form.showtime}}
@@ -39,9 +43,11 @@
         </div>
     </div>
 </div>
-    <div id="gonna-update">
+<div class="booking-frame">
+        <div id="gonna-update">
         {% include 'webapp/includes/seat_selection.html' %}
     </div>
-    <br>
+</div>
+<br>
 
 {% endblock %}

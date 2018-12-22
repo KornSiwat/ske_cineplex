@@ -2,7 +2,7 @@ html,body {
     height: 100%;
     margin: 0;
     display: block;
-    /* min-width: 800px; */
+    min-width: 320px;
 }
 
 body {
@@ -66,7 +66,6 @@ h3 {
     background: #f6f6f6 !important;
     border: rgb(216, 216, 216) solid 0.1px;
 }
-
 
 /* card releated */
 
@@ -176,6 +175,7 @@ h3 {
     text-indent: 0 !important;
     font-size: 33px;
 }
+
 .contact-description {
     padding: 5px 100px;
     text-indent: 5%;
@@ -201,7 +201,6 @@ h3 {
     height: auto;
     border-radius: 1%;
 }
-
 
 /* booking page */
 .screen {
@@ -233,7 +232,6 @@ h3 {
     border-bottom-right-radius: 8px;
 }
 
-
 .booking-detail {
     margin: 70px auto 60px auto;
     padding: 0 20px 0 100px;
@@ -243,16 +241,15 @@ h3 {
     border-radius: 3px;
 }
 
-
 .booking-pic{
-    margin: -40px 40px 0 -70px;
-    width: 188.48px;
-    height: 279px;
+    margin: -20px 40px 0 -65px;
+    width: 160px;
+    height: 236.9px;
     box-shadow: 0 15px 37px -5px rgba(48, 48, 48, 0.7);
 }
 
 .booking-description {
-    margin: -240px 0 100px 140px;
+    margin: -230px 0 100px 140px;
     /* background: rgb(104, 99, 99); */
     width: 500px;
     height: 190px;
@@ -495,8 +492,8 @@ th,td {
         border-radius: 3px;
         display: flex;
         justify-content: center;
-        width: 190px;
-        height: 281px;
+        width: 160px;
+        height: 236.9px;
     }
     
     .movie_info_name {
@@ -526,5 +523,517 @@ th,td {
         border-bottom: darkgray solid 2px;
         /* border-top-left-radius: 5px;
         border-top-right-radius: 5px; */
+    }
+
+        /* booking page */
+    .screen {
+        text-align: center;
+        width: 300px;
+        border-radius: 5px;
+        border: solid rgb(238, 238, 238) 2px;
+        margin: 15px auto;
+    }
+
+    .frame {
+        margin: -149px auto 15px auto; 
+        width: 180px;
+        height: 148px;
+        background: rgb(196, 196, 196);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .frame_booking {
+        height: 330px;
+    }
+
+    .frame_book {
+        width: 238px;
+        height: 150px;
+        background: rgb(196, 196, 196);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .booking-detail {
+        margin: 70px auto 60px auto;
+        /* padding: 0 20px 0 100px; */
+        background: #f6f6f6;
+        height: 220px;
+        width: 600px;
+        border-radius: 3px;
+    }
+
+    .booking-pic{
+        margin: 18px 0 0 -70px;
+        width: 125px;
+        height: 185.1px;
+        box-shadow: none;
+    }
+
+    .booking-description {
+        margin: -200px 0 100px 70px;
+        /* background: rgb(104, 99, 99); */
+        width: 500px;
+        height: 190px;
+        font-family: Helvetica, sans-serif;
+        text-align: left;
+        text-indent: 10px;
+    }
+
+    .booking-top-container {
+        display: flex;
+        margin-top: 40px;
+    }
+
+    .booking-name {
+        font-size: 25px;
+    }
+
+    .booking-date {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    .date {
+        margin-top: 10px;
+        margin-left: 25px;
+        font-size: 15px;
+    }
+
+    .booking-showtimes {
+        display: flex;
+        margin: 5px 0 -5px 0;
+        text-indent: 11px;
+        font-size: 17px;
+    }
+
+    .showtime-button {
+        height: 24px;
+        margin: 1px 0 0 4px;
+        font-size: 11px;
+        border-radius: 5px;
+        background: rgb(240, 232, 166);
+        transition: 0.25s;
+        border: solid rgba(240, 233, 166, 0.836);
+        outline:none;
+    }
+
+    .showtime-button:hover {
+        transform: scale(1.02);
+    }
+
+    .book-button {
+        margin-top: 7px;
+        margin-left: 2px;
+        width: 55px;
+        height: 25px;
+        font-size: 13px;
+        border-radius: 5px;
+        background:rgb(240, 232, 166);
+        transition: 0.5s;
+        border: solid rgba(240, 233, 166, 0.836);
+        outline:none;
+    }
+
+    .seats {
+        margin: 0 auto;
+    }
+
+    /* seat selection */
+    th,td {
+        padding: 0 2px;
+    }
+
+    .seat-icon {
+        width: 17px;
+        height: 17px;
+        border-radius: 10px;
+    }
+
+    .form {
+        width: 400px;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .form-name {
+        margin-top: 6px;
+        margin-right: 12px;
+        width: 50px;
+        font-size: 15px;
+    }
+
+    .form-tel {
+        margin-top: 6px;
+        /* margin-right: 7px; */
+        width: 50px;
+        font-size: 15px;
+    }
+    .form-seat {
+        margin-top: 10px;
+        margin-left: 23px;
+        width: 50px;
+        font-size: 15px;
+    }
+
+    .booker-name, .booker-tel{
+        margin-top: 5px;
+        font-size: 14px;
+        width: 120px;
+        height: 22px;
+        outline:none;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .booker-tel{
+        margin-left: -8px;
+        width: 150px;
+    }
+
+    .booking-seat{
+        font-size: 14px;
+        margin-top: 7px;
+        margin-right: 4px;
+        margin-left: 4px;
+        font-size: 14px;
+        width: 100px;
+        height: 25px;
+        outline:none;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    #theater-field,#showtime-field,.booking-movie-name,#movie-field,#date-field {
+        position: fixed;
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        z-index: -1;
+        visibility: hidden;
+    }
+
+    .chosen {
+        border: rgb(100, 100, 100) solid 2px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .logo {
+        position: absolute;
+        top: 8px;
+        left: 55%;
+        right: 50%;
+        /* margin-left: -95px; */
+        width: 160px;
+        height: 46.3px;
+    }
+
+    .navbar {
+        font-size: 16px;
+        font-family: 'Titillium Web', sans-serif !important;
+    }
+    
+    .headroute {
+        padding: 10px 20px;
+        margin: 10px 0 -10px 0;
+    }
+    
+    .route  {
+        font-size: 24px;
+        font-family: 'Titillium Web', sans-serif;
+        color:  rgb(238, 238, 238);
+    }
+
+    .movie_info_pic {
+        margin: 10px auto 10px auto;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        width: 160px;
+        height: 236.9px;
+    }
+
+    .movie_info_name {
+        text-align: center;
+        text-indent: 0 !important;
+        font-size: 30px;
+    
+    }
+
+    .theater_name {
+        background: rgb(240, 240, 240);
+        height: 30px;
+        padding-top: 8px;
+        /* border-bottom: darkgray solid 2px; */
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    .movie_name{
+        background: rgb(240, 240, 240);
+        height: 45px;
+        padding-top: 4px;
+        border-bottom: darkgray solid 2px;
+        /* border-top-left-radius: 5px;
+        border-top-right-radius: 5px; */
+    }
+
+        /* booking page */
+    .screen {
+        text-align: center;
+        width: 200px;
+        border-radius: 5px;
+        border: solid rgb(238, 238, 238) 2px;
+        margin: 20px auto;
+    }
+
+    .frame {
+        margin: -149px auto 15px auto; 
+        width: 180px;
+        height: 148px;
+        background: rgb(196, 196, 196);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .frame_booking {
+        height: 330px;
+    }
+
+    .frame_book {
+        width: 238px;
+        height: 150px;
+        background: rgb(196, 196, 196);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .booking-detail {
+        margin: 20px auto 0 auto;
+        padding: 10px 20px;
+        background: #f6f6f6;
+        height: 400px;
+        width: 90%;
+        border-radius: 3px;
+    }
+
+    .booking-pic{
+        display: block;
+        margin: 15px auto;
+        width: 90px;
+        height: 133.3px;
+        box-shadow: none;
+    }
+
+    .booking-description {
+        margin: 0px 0 0px 0px;
+        background: none;
+        width: 100%;
+        height: 190px;
+        font-family: Helvetica, sans-serif;
+        text-align: left;
+        text-indent: 10px;
+    }
+
+    .booking-top-container {
+        display: flex;
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    .booking-name {
+        font-size: 20px;
+    }
+
+    .booking-date {
+        margin-top: 10px;
+        margin-left: 7px;
+        font-size: 15px;
+    }
+
+    .date {
+        margin-top: 10px;
+        margin-left: 25px;
+        font-size: 15px;
+    }
+
+    .booking-showtimes {
+        margin: 0;
+        text-indent: 0;
+        font-size: 0;
+    }
+    #showtime-word {
+        visibility: hidden;
+        margin: 0;
+    }
+    .showtime-buttons-box{
+        margin: 0 auto;
+        height: 30px;
+        display: flex;
+        overflow: scroll;
+        border: rgba(0, 0, 0, 0.1) solid 2px;
+        border-radius: 5px;
+    }
+
+    .showtime-button {
+        height: 20px;
+        margin: 3px 0 0 4px;
+        font-size: 10px;
+        border-radius: 5px;
+        background: rgb(240, 232, 166);
+        transition: 0.25s;
+        border: solid rgba(240, 233, 166, 0.836);
+        outline:none;
+    }
+
+    .showtime-button:hover {
+        transform: scale(1.02);
+    }
+
+    .book-button {
+        margin-top: 0;
+        margin-left: 2px;
+        width: 55px;
+        height: 25px;
+        font-size: 13px;
+        border-radius: 5px;
+        background:rgb(240, 232, 166);
+        transition: 0.5s;
+        border: solid rgba(240, 233, 166, 0.836);
+        outline:none;
+    }
+
+    .seats {
+        margin: 0 auto;
+    }
+
+    th,td {
+        font-size: 12px;
+        padding: 0 2px;
+    }
+    /* seat selection */
+
+    .seat-icon {
+        width: 11px;
+        height: 11px;
+        border-radius: 10px;
+    }
+
+    .form {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .form-name {
+        margin-top: 13px;
+        margin-right: 12px;
+        width: 50px;
+        font-size: 15px;
+    }
+
+    .form-tel {
+        margin-top: 6px;
+        margin-left: 20px;
+        width: 50px;
+        font-size: 15px;
+    }
+    .form-seat {
+        float: left;
+        margin-top: 7px;
+        margin-left: 8px;
+        width: 50px;
+        font-size: 15px;
+    }
+
+    .booker-name, .booker-tel{
+        margin-top: 10px;
+        margin-right: 10%;
+        font-size: 14px;
+        width: 60%;
+        height: 22px;
+        outline:none;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .booker-tel{
+        margin-top: 5px;
+        margin-left: -8px;
+
+    }
+
+    .booking-seat-box{
+        /* margin: 0 ; */
+        width: 100%;
+    }
+
+    .booking-seat{
+        font-size: 14px;
+        margin-top: 0;
+        margin-right: 0;
+        margin-left: -5px;
+        font-size: 14px;
+        width: 40%;
+        height: 25px;
+        outline:none;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    #theater-field,#showtime-field,.booking-movie-name,#movie-field,#date-field {
+        position: fixed;
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        z-index: -1;
+        visibility: hidden;
+    }
+
+    .booking-frame {
+        margin: -8px 5% 0 5%;
+        border: #f6f6f6 solid;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    #gonna-update{
+        margin: 0 0 20px 0;
+    }
+
+}
+
+@media only screen and (max-width:370px) {
+
+    th,td {
+        font-size: 10px;
+        padding: 0 1px;
+    }
+
+    .seat-icon {
+        width: 12px;
+        height: 12px;
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (max-width:340px) {
+
+    .seat-icon {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
     }
 }

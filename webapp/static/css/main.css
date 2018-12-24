@@ -173,16 +173,16 @@ h3 {
 .contact-name{
     text-align: center !important;
     text-indent: 0 !important;
-    font-size: 33px;
+    font-size: 30px;
 }
 
 .contact-description {
-    padding: 5px 100px;
+    padding: 5px 80px;
     text-indent: 5%;
     text-align: justify;
     text-align-last: left;
     color:  rgb(238, 238, 238);
-    font-size: 20px;
+    font-size: 18px;
 
 }
 
@@ -438,6 +438,7 @@ th,td {
 }
 
 .search-name,.search-tel {
+    font-size: 18px;
     margin: 10px 10px 0 0;
 }
 
@@ -448,7 +449,7 @@ th,td {
 }
 #history-name,#history-tel {
     margin-top: 5px;
-    height: 35px;
+    height: 30px;
     border-radius: 10px;
 }
 
@@ -475,7 +476,7 @@ th,td {
 
 .search-button {
     display: block;
-    margin: -6px auto 5px auto;
+    margin: 0 auto 10px auto;
     border: none;
     outline: none;
     background: rgb(182, 93, 86);
@@ -490,6 +491,35 @@ th,td {
 }
 
 @media only screen and (max-width:870px) {
+
+    /* contact page */
+
+    .owner {
+        border-radius: 120px;
+        display: flex;
+        margin: 15px auto;
+        width: 200px;
+        height: auto;
+        border: solid white;    
+    }
+
+    .contact-name{
+        text-align: center !important;
+        text-indent: 0 !important;
+        font-size: 27px;
+        margin-bottom: 15px;
+
+    }
+
+    .contact-description {
+        padding: 5px 60px;
+        text-indent: 5%;
+        text-align: justify;
+        text-align-last: left;
+        color:  rgb(238, 238, 238);
+        font-size: 17px;
+
+    }
 
     .card {
         float: left;
@@ -775,6 +805,33 @@ th,td {
 }
 
 @media only screen and (max-width:700px) {
+
+    .owner {
+        border-radius: 120px;
+        display: flex;
+        margin: 15px auto;
+        width: 170px;
+        height: auto;
+        border: solid white;    
+    }
+
+    .contact-name{
+        text-align: center !important;
+        text-indent: 0 !important;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .contact-description {
+        padding: 5px 40px;
+        text-indent: 5%;
+        text-align: justify;
+        text-align-last: left;
+        color:  rgb(238, 238, 238);
+        font-size: 14px;
+
+    }
+
     .logo {
         position: absolute;
         top: 8px;
@@ -1082,9 +1139,102 @@ th,td {
         margin: 0 0 20px 0;
     }
 
+    /* History page */
+
+.search-img {
+    display: block;
+    width: 160px;
+    height: auto;
+    margin: 20px auto;
+    filter: grayscale(30%);
+}
+
+.search {
+    font-size: 20px;
+}
+
+.search-name,.search-tel {
+    font-size: 18px;
+    margin: 10px 10px 0 0;
+}
+
+.name-s {
+    display: flex;
+    justify-content: center;
+    margin-left: -5%;
+}
+#history-name,#history-tel {
+    margin-top: 5px;
+    height: 25px;
+    border-radius: 10px;
+}
+
+.tel-s {
+    margin: 12px 0;
+    margin-left: -5%;
+    display: flex;
+    justify-content: center;
+}
+.head-detail {
+    margin-top: 25px;
+    margin-left: 12%;
+    font-size: 17px;
+}
+
+.history-box {
+    overflow: scroll;
+    margin: 15px 10% 20px 10%;
+    background: #f6f6f657;
+    padding: 20px 20px;
+    border-radius: 5px;
+    height: 180px;
+}
+
+.search-button {
+    display: block;
+    margin: 0 auto 10px auto;
+    border: none;
+    outline: none;
+    background: rgb(182, 93, 86);
+    border-radius: 10px;
+    font-size: 17px;
+    width: 100px;
+    transition: 0.5s;
+}
+
+.search-button:hover {
+    transform: scale(1.04);
+}
+
 }
 
 @media only screen and (max-width:500px) {
+
+    .owner {
+        border-radius: 120px;
+        display: flex;
+        margin: 15px auto;
+        width: 150px;
+        height: auto;
+        border: solid white;    
+    }
+
+    .contact-name{
+        text-align: center !important;
+        text-indent: 0 !important;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .contact-description {
+        padding: 5px 30px;
+        text-indent: 5%;
+        text-align: justify;
+        text-align-last: left;
+        color:  rgb(238, 238, 238);
+        font-size: 12px;
+    }
+
     .logo {
         position: absolute;
         top: 8px;
@@ -1395,6 +1545,31 @@ th,td {
 }
 
 @media only screen and (max-width:370px) {
+
+    .owner {
+        border-radius: 120px;
+        display: flex;
+        margin: 15px auto;
+        width: 140px;
+        height: auto;
+        border: solid white;    
+    }
+
+    .contact-name{
+        text-align: center !important;
+        text-indent: 0 !important;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .contact-description {
+        padding: 5px 25px;
+        text-indent: 5%;
+        text-align: justify;
+        text-align-last: left;
+        color:  rgb(238, 238, 238);
+        font-size: 11px;
+    }
 
     th,td {
         font-size: 10px;

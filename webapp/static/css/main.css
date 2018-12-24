@@ -134,8 +134,8 @@ h3 {
     border-radius: 3px;
     display: flex;
     justify-content: center;
-    width: 190px;
-    height: 281px;
+    width: 170px;
+    height: auto;
 }
 
 .movie_info_name {
@@ -151,6 +151,10 @@ h3 {
     padding: 0 5%;
     text-indent: 5%;
     font-size: 20px;
+}
+
+.movie_info_description {
+    text-align-last: left;
 }
 
 .release {
@@ -212,9 +216,9 @@ h3 {
 }
 
 .frame {
-    margin: -149px auto 15px auto; 
-    width: 210px;
-    height: 148px;
+    margin: -115px auto 15px auto; 
+    width: 185px;
+    height: 110px;
     background: rgb(196, 196, 196);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -547,8 +551,14 @@ th,td {
         border-radius: 3px;
         display: flex;
         justify-content: center;
-        width: 160px;
-        height: 236.9px;
+        width: 140px;
+        height: auto;
+    }
+
+    .frame {
+        margin-top: -95px;
+        width: 150px;
+        height: 90px;
     }
     
     .movie_info_name {
@@ -587,15 +597,6 @@ th,td {
         border-radius: 5px;
         border: solid rgb(238, 238, 238) 2px;
         margin: 20px auto;
-    }
-
-    .frame {
-        margin: -149px auto 15px auto; 
-        width: 180px;
-        height: 148px;
-        background: rgb(196, 196, 196);
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
     }
 
     .frame_booking {
@@ -863,8 +864,13 @@ th,td {
         border-radius: 3px;
         display: flex;
         justify-content: center;
-        width: 160px;
-        height: 236.9px;
+        width: 130px;
+    }
+
+    .frame {
+        margin-top: -85px;
+        width: 140px;
+        height: 80px;
     }
 
     .movie_info_name {
@@ -872,6 +878,10 @@ th,td {
         text-indent: 0 !important;
         font-size: 30px;
     
+    }
+
+    .movie_info_description {
+        font-size: 17px;
     }
 
     .theater_name {
@@ -903,15 +913,6 @@ th,td {
         border-radius: 5px;
         border: solid rgb(238, 238, 238) 2px;
         margin: 25px auto 20px auto;
-    }
-
-    .frame {
-        margin: -149px auto 15px auto; 
-        width: 180px;
-        height: 148px;
-        background: rgb(196, 196, 196);
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
     }
 
     .frame_booking {
@@ -963,19 +964,6 @@ th,td {
         font-size: 20px;
     }
 
-    .booking-date {
-        margin-top: 10px;
-        margin-left: 15px;
-        margin-right: 10%;
-        font-size: 15px;
-    }
-
-    .date {
-        margin-top: 10px;
-        margin-left: 10%;
-        font-size: 15px;
-    }
-
     .booking-showtimes {
         margin: 0;
         text-indent: 0;
@@ -983,10 +971,11 @@ th,td {
     }
 
     #showtime-word {
-        visibility: visible;
+        visibility: hidden;
     }
+
     .showtime-buttons-box{
-        margin: 0 auto 10px auto;
+        margin: 5px auto 5px auto;
         height: 30px;
         display: flex;
         overflow: scroll;
@@ -1008,6 +997,11 @@ th,td {
     .showtime-button:hover {
         transform: scale(1.02);
     }
+
+    .chosen {
+        border: rgba(0, 0, 0, 0.2) solid 2px;
+    }
+    
 
     .book-button {
         margin-top: 0;
@@ -1044,88 +1038,62 @@ th,td {
         justify-content: center;
         flex-wrap: wrap;
     }
+    
+    .booking-name-box{
+        width: 45%;
+    }
 
     .form-name {
-        float: left;
         margin-top: 13px;
-        margin-right: 12px;
         width: 50px;
-        font-size: 15px;
-    }
-
-    .form-tel {
-        float: left;
-        margin-top: 8px;
-        margin-left: 5px;
-        width: 40px;
-        font-size: 15px;
-    }
-    .form-seat {
-        float: left;
-        margin-top: 10px;
-        margin-left: 8px;
-        width: 50px;
-        font-size: 15px;
     }
 
     .booker-name, .booker-tel{
         margin-top: 10px;
-        margin-right: 0;
         margin-left: -10px;
-        font-size: 14px;
         width: 60%;
-        height: 22px;
-        outline:none;
-        border: none;
-        border-radius: 5px;
     }
-
-    .booker-tel{
-        margin-top: 5px;
-        margin-left: -8px;
-
-    }
-
-    .booking-name-box{
-        /* margin: 0 ; */
-        width: 45%;
-    }
+    
     .booking-tel-box{
         margin: 5px 0;
         width: 45%;
     }
 
+    .form-tel {
+        margin-top: 8px;
+        margin-left: 5px;
+    }
+    
+    .booker-tel{
+        margin-top: 5px;
+        margin-left: -8px;
+        
+    }
+    
     .booking-date-box{
         margin: 0 -20px;
         width: 40%;
     }
+
+    .booking-date {
+        margin-left: 15px;
+        margin-right: 10%;
+    }
+
     .booking-seat-box{
         margin-left: 7%;
         width: 45%;
     }
-
-    .booking-seat{
-        font-size: 14px;
-        margin-top: 9px;
-        margin-right: 0;
-        margin-left: -5px;
-        font-size: 14px;
-        width: 30%;
-        height: 20px;
-        outline:none;
-        border: none;
-        border-radius: 5px;
-        text-align: center;
+    
+    .form-seat {
+        width: 50px;
     }
 
-    #theater-field,#showtime-field,.booking-movie-name,#movie-field,#date-field {
-        position: fixed;
-        width: 0;
-        height: 0;
-        margin: 0;
-        padding: 0;
-        z-index: -1;
-        visibility: hidden;
+    .booking-seat{
+        margin-top: 9px;
+        margin-left: -5px;
+        width: 30%;
+        height: 20px;
     }
 
     .booking-frame {
@@ -1136,75 +1104,31 @@ th,td {
     }
 
     #gonna-update{
-        margin: 0 0 20px 0;
+        margin-bottom: 20px;
     }
 
-    /* History page */
+        /* History page */
 
-.search-img {
-    display: block;
-    width: 160px;
-    height: auto;
-    margin: 20px auto;
-    filter: grayscale(30%);
-}
+    .search-img {
+        width: 160px;
+    }
 
-.search {
-    font-size: 20px;
-}
+    .search {
+        font-size: 20px;
+    }
 
-.search-name,.search-tel {
-    font-size: 18px;
-    margin: 10px 10px 0 0;
-}
+    #history-name,#history-tel {
+        margin-top: 8px;
+        height: 25px;
+    }
+    
+    .head-detail {
+        font-size: 17px;
+    }
 
-.name-s {
-    display: flex;
-    justify-content: center;
-    margin-left: -5%;
-}
-#history-name,#history-tel {
-    margin-top: 5px;
-    height: 25px;
-    border-radius: 10px;
-}
-
-.tel-s {
-    margin: 12px 0;
-    margin-left: -5%;
-    display: flex;
-    justify-content: center;
-}
-.head-detail {
-    margin-top: 25px;
-    margin-left: 12%;
-    font-size: 17px;
-}
-
-.history-box {
-    overflow: scroll;
-    margin: 15px 10% 20px 10%;
-    background: #f6f6f657;
-    padding: 20px 20px;
-    border-radius: 5px;
-    height: 180px;
-}
-
-.search-button {
-    display: block;
-    margin: 0 auto 10px auto;
-    border: none;
-    outline: none;
-    background: rgb(182, 93, 86);
-    border-radius: 10px;
-    font-size: 17px;
-    width: 100px;
-    transition: 0.5s;
-}
-
-.search-button:hover {
-    transform: scale(1.04);
-}
+    .search-button {
+        font-size: 17px;
+    }
 
 }
 
@@ -1220,114 +1144,41 @@ th,td {
     }
 
     .contact-name{
-        text-align: center !important;
-        text-indent: 0 !important;
         font-size: 20px;
         margin-bottom: 10px;
     }
 
     .contact-description {
         padding: 5px 30px;
-        text-indent: 5%;
-        text-align: justify;
-        text-align-last: left;
-        color:  rgb(238, 238, 238);
-        font-size: 12px;
-    }
-
-    .logo {
-        position: absolute;
-        top: 8px;
-        left: 52%;
-        right: 50%;
-        /* margin-left: -95px; */
-        width: 160px;
-        height: 46.3px;
-    }
-
-    .navbar {
-        font-size: 16px;
-        font-family: 'Titillium Web', sans-serif !important;
+        font-size: 14px;
     }
     
-    .headroute {
-        padding: 10px 20px;
-        margin: 10px 0 -10px 0;
-    }
-    
-    .route  {
-        font-size: 24px;
-        font-family: 'Titillium Web', sans-serif;
-        color:  rgb(238, 238, 238);
-    }
-
     .movie_info_pic {
-        margin: 10px auto 10px auto;
-        border-radius: 3px;
-        display: flex;
-        justify-content: center;
-        width: 160px;
-        height: 236.9px;
-    }
-
-    .movie_info_name {
-        text-align: center;
-        text-indent: 0 !important;
-        font-size: 30px;
-    
-    }
-
-    .theater_name {
-        background: rgb(240, 240, 240);
-        height: 30px;
-        padding-top: 8px;
-        /* border-bottom: darkgray solid 2px; */
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-    }
-
-    h3 {
-        font-size: 15px;
-    }
-
-    .movie_name{
-        background: rgb(240, 240, 240);
-        height: 45px;
-        padding-top: 4px;
-        border-bottom: darkgray solid 2px;
-        /* border-top-left-radius: 5px;
-        border-top-right-radius: 5px; */
-    }
-
-        /* booking page */
-    .screen {
-        text-align: center;
-        width: 180px;
-        border-radius: 5px;
-        border: solid rgb(238, 238, 238) 2px;
-        margin: 30px auto 20px auto;
-        font-size: 18px;
+        width: 110px;
+        height: auto;
     }
 
     .frame {
-        margin: -149px auto 15px auto; 
+        margin-top: -85px;
+        width: 120px;
+        height: 80px;
+    }
+
+    .movie_info_name {
+        font-size: 20px;
+    
+    }
+
+    .movie_info_description {
+        font-size: 14px;
+    }
+
+        /* booking page */
+
+    .screen {
         width: 180px;
-        height: 148px;
-        background: rgb(196, 196, 196);
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
-    }
-
-    .frame_booking {
-        height: 330px;
-    }
-
-    .frame_book {
-        width: 238px;
-        height: 150px;
-        background: rgb(196, 196, 196);
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
+        margin: 25px auto 20px auto;
+        font-size: 18px;
     }
 
     .booking-detail {
@@ -1367,27 +1218,18 @@ th,td {
         font-size: 20px;
     }
 
-    .booking-date {
-        margin-top: 10px;
-        margin-left: 7px;
-        font-size: 15px;
-    }
-
-    .date {
-        margin-top: 10px;
-        margin-left: 25px;
-        font-size: 15px;
-    }
-
+    
     .booking-showtimes {
         margin: 0;
         text-indent: 0;
         font-size: 0;
     }
+    
     #showtime-word {
         visibility: hidden;
         margin: 0;
     }
+    
     .showtime-buttons-box{
         margin: 0 auto;
         height: 30px;
@@ -1396,7 +1238,7 @@ th,td {
         border: rgba(0, 0, 0, 0.1) solid 2px;
         border-radius: 5px;
     }
-
+    
     .showtime-button {
         height: 20px;
         margin: 3px 0 0 4px;
@@ -1407,167 +1249,93 @@ th,td {
         border: solid rgba(240, 233, 166, 0.836);
         outline:none;
     }
-
+    
     .showtime-button:hover {
         transform: scale(1.02);
-    }   
-
-    .book-button {
-        margin-top: 0;
-        margin-left: 0;
-        width: 55px;
-        height: 25px;
-        font-size: 13px;
-        border-radius: 5px;
-        background:rgb(240, 232, 166);
-        transition: 0.5s;
-        border: solid rgba(240, 233, 166, 0.836);
-        outline:none;
     }
-
-    .seats {
-        margin: 0 auto;
+    
+    .chosen {
+        border: rgba(0, 0, 0, 0.2) solid 2px;
     }
-
+        
     th,td {
-        font-size: 12px;
         padding: 0 2px;
     }
-    /* seat selection */
 
+    /* seat selection */
+    
     .seat-icon {
         width: 11px;
         height: 11px;
-        border-radius: 10px;
+    }
+    
+    .booking-name-box{
+        margin: 0  auto;
+        width: 240px;
+    }
+    
+    .booker-name, .booker-tel{
+        width: 150px;
     }
 
-    .form {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .form-name {
-        float: left;
-        margin-top: 13px;
-        margin-right: 12px;
-        width: 50px;
-        font-size: 15px;
+    .booking-tel-box{
+        margin: 0 auto;
+        width: 240px;
     }
 
     .form-tel {
-        float: left;
-        margin-top: 6px;
         margin-left: 20px;
         width: 50px;
-        font-size: 15px;
-    }
-    .form-seat {
-        float: left;
-        margin-top: 7px;
-        margin-left: 12px;
-        width: 50px;
-        font-size: 15px;
-    }
-
-    .booker-name, .booker-tel{
-        margin-top: 10px;
-        margin-right: 0;
-        font-size: 14px;
-        width: 150px;
-        height: 22px;
-        outline:none;
-        border: none;
-        border-radius: 5px;
     }
 
     .booker-tel{
         margin-top: 5px;
         margin-left: -19px;
-
+        
     }
-
-    .booking-name-box{
-        margin: 0  auto;
-        width: 240px;
-    }
-    .booking-tel-box{
-        margin: 0 auto;
-        width: 240px;
-    }
-    
     .booking-date-box{
         margin: 0 auto;
         width: 240px;
     }
 
+    .booking-date {
+        margin-left: 7px;
+    }
+
     .booking-seat-box{
-        /* margin: 0 ; */
         width: 250px;
     }
 
+    .form-seat {
+        margin-top: 7px;
+        margin-left: 1px;
+    }
+
     .booking-seat{
-        font-size: 14px;
         margin-top: 0;
-        margin-right: 0;
-        margin-left: -5px;
+        margin-left: -7px;
         font-size: 14px;
         width: 40%;
-        height: 25px;
-        outline:none;
-        border: none;
-        border-radius: 5px;
-        text-align: center;
     }
 
-    #theater-field,#showtime-field,.booking-movie-name,#movie-field,#date-field {
-        position: fixed;
-        width: 0;
-        height: 0;
-        margin: 0;
-        padding: 0;
-        z-index: -1;
-        visibility: hidden;
-    }
-
-    .booking-frame {
-        margin: -8px 5% 0 5%;
-        border: #f6f6f6 solid;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-
-    #gonna-update{
-        margin: 0 0 20px 0;
+    .book-button {
+        margin-left: 0;
     }
 
 }
 
 @media only screen and (max-width:370px) {
-
-    .owner {
-        border-radius: 120px;
-        display: flex;
-        margin: 15px auto;
+    .logo {
+        left: 55%;
         width: 140px;
-        height: auto;
-        border: solid white;    
     }
 
-    .contact-name{
-        text-align: center !important;
-        text-indent: 0 !important;
-        font-size: 20px;
-        margin-bottom: 10px;
+    .owner {
+        width: 140px;
     }
 
     .contact-description {
         padding: 5px 25px;
-        text-indent: 5%;
-        text-align: justify;
-        text-align-last: left;
-        color:  rgb(238, 238, 238);
         font-size: 11px;
     }
 
@@ -1579,7 +1347,6 @@ th,td {
     .seat-icon {
         width: 12px;
         height: 12px;
-        border-radius: 10px;
     }
 }
 
@@ -1588,6 +1355,6 @@ th,td {
     .seat-icon {
         width: 10px;
         height: 10px;
-        border-radius: 10px;
     }
+
 }

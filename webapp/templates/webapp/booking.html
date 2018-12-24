@@ -23,12 +23,18 @@
             <form method="POST">
                 {% csrf_token %}
                 <div class="form">
-                    <h3 class='form-name black' >Name: </h3>
-                    {{form.name}}
-                    <h3 class='form-tel black' >Tel: </h3>
-                    {{form.tel}}
-                    <h2 class='black booking-date'>Date: </h2>
-                    <h2 class='black date' id="{{today}}">{{today}}</h2>
+                    <div class="booking-name-box">
+                        <h3 class='form-name black' >Name: </h3>
+                        {{form.name}}
+                    </div>
+                    <div class="booking-tel-box">
+                        <h3 class='form-tel black' >Tel: </h3>
+                        {{form.tel}}
+                    </div>
+                    <div class="booking-date-box">
+                        <h2 class='black booking-date'>Date: </h2>
+                        <h2 class='black date' id="{{today}}">{{today}}</h2>
+                    </div>
                     <div class="booking-seat-box">
                         <h3 class='form-seat black'>Seat: </h3>
                         {{form.seat}}

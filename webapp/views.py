@@ -131,7 +131,7 @@ def history(request):
 
 def update_history(request, name, tel):
     try:
-        history = TicketBookerModel.objects.filter(name=name,tel=tel).order_by('date','showtime')
+        history = TicketBookerModel.objects.filter(name=name,tel=tel).order_by('-date','showtime')
     except TicketBookerModel.DoesNotExist:
         history = 'Not Found'
     return render(request, 'webapp/includes/history_detail.html', {

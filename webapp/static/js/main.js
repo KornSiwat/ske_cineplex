@@ -19,6 +19,8 @@ $(window).ready(function() {
 });
 
 const choose_time = function(elem) {
+  let input = $('#seat-input-box');
+  input[0].value = '';
   let all_showtime = $(".showtime-button");
   for (let i = 0; i < all_showtime.length; i++) {
     all_showtime[i].className = 'showtime-button';

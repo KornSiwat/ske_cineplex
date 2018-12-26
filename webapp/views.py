@@ -43,7 +43,11 @@ def flatten(input):
 
 def update_seat(request, id, showtime):
     theater = Theater.objects.get(id=id)
-    rawbooked = list(TicketBookerModel.objects.filter(theater=theater.theater_id,showtime=showtime).values_list('seat', flat=True))
+    day = datetime.now().day
+    month = datetime.now().month
+    year = datetime.now().year
+    today = f'{day}/{month}/{year}'
+    rawbooked = list(TicketBookerModel.objects.filter(theater=theater.theater_id,showtime=showtime,date=today).values_list('seat', flat=True))
     booked = []
     for i in rawbooked:
         if ',' in i:
@@ -69,10 +73,13 @@ def update_seat(request, id, showtime):
                     'showtimes' : showtimes,
                     'seats_list' : seats_list,})
 
-
 def booking(request, id):
     theater = Theater.objects.get(id=id)
     form = CreateBooker(request.POST)
+    day = datetime.now().day
+    month = datetime.now().month
+    year = datetime.now().year
+    today = f'{day}/{month}/{year}'
     if request.method == 'POST':
         if form.is_valid():
             TicketBooker = form.save(commit=False)
@@ -83,7 +90,7 @@ def booking(request, id):
             return render(request, 'webapp/includes/error.html')
     elif request.method == "GET":
         theater = Theater.objects.get(id=id)
-        rawbooked = list(TicketBookerModel.objects.filter(theater=theater.theater_id,showtime=theater.first_show).values_list('seat', flat=True))
+        rawbooked = list(TicketBookerModel.objects.filter(theater=theater.theater_id,showtime=theater.first_show,date=today).values_list('seat', flat=True))
         booked = []
         for i in rawbooked:
             if ',' in i:
@@ -94,10 +101,6 @@ def booking(request, id):
         rows = ascii_uppercase[:theater.rows]
         rows = [x for x in rows]
         rows = rows[::-1]
-        day = datetime.now().day
-        month = datetime.now().month
-        year = datetime.now().year
-        today = f'{day}/{month}/{year}'
         first_show = theater.first_show
         showtimes = theater.showtimes.split(',')
         seats_list = []
@@ -119,7 +122,6 @@ def booking(request, id):
                     'showtimes' : showtimes,
                     'seats_list' : seats_list,
                     'form' : form,
-                    # 'booked': booked
                 })
 
 def history(request):

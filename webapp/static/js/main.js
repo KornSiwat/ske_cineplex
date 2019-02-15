@@ -8,9 +8,9 @@ $(window).ready( () => {
       url: `/update_seat/${id}/${first_button[0].id}`,
       method: 'GET',
       data: {},
-      success: function(data){
+      success: (data) => {
         $('#gonna-update').html(data);
-      }, error: function(error){
+      }, error: (error) => {
         console.log(error);
         console.log("error");
       }
@@ -32,9 +32,9 @@ const choose_time = (elem) => {
     url: `/update_seat/${id}/${elem.id}`,
     method: 'GET',
     data: {},
-    success: function(data){
+    success: (data) => {
       $('#gonna-update').html(data);
-    }, error: function(error){
+    }, error: (error) => {
       console.log(error);
       console.log("error");
     }
@@ -73,9 +73,9 @@ const update_history = () => {
     url: `/update_history/${name[0].value}/${tel[0].value}`,
     method: 'GET',
     data: {},
-    success: function(data){
+    success: (data) => {
       $('#history-update').html(data);
-    }, error: function(error){
+    }, error: (error) => {
       console.log('error');
     }
   })

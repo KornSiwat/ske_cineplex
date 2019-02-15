@@ -1,5 +1,4 @@
-$(window).ready(function() {
-
+$(window).ready( () => {
     let first_button = $('.chosen');
     console.log(first_button[0].id)
     showtime_form = $('#showtime-field');
@@ -18,7 +17,7 @@ $(window).ready(function() {
   });
 });
 
-const choose_time = function(elem) {
+const choose_time = (elem) => {
   let input = $('#seat-input-box');
   input[0].value = '';
   let all_showtime = $(".showtime-button");
@@ -42,7 +41,7 @@ const choose_time = function(elem) {
   })
 };
 
-const select = function(elem) {
+const select = (elem) => {
   let movie_field = $('#movie-field');
   let movie_name = $('.booking-movie-name');
   movie_field[0].value = movie_name[0].id
@@ -65,9 +64,9 @@ const select = function(elem) {
     input[0].value = input[0].value.replace(`,${elem.id}`, "");
     input[0].value = input[0].value.replace(`${elem.id},`, "");
     input[0].value = input[0].value.replace(`${elem.id}`, "");
-}}
+}};
 
-const update_history = function() {
+const update_history = () => {
   let name = $('#history-name');
   let tel = $('#history-tel');
   $.ajax({
@@ -77,28 +76,23 @@ const update_history = function() {
     success: function(data){
       $('#history-update').html(data);
     }, error: function(error){
-      console.log('error')
+      console.log('error');
     }
   })
-}
+};
 
-const check_card = function() {
-  var card = $('.card');
-  var winWidth = (window.innerWidth - (0.1* window.innerWidth));
+const check_card = () => {
+  let card = $('.card');
+  let winWidth = (window.innerWidth - (0.1* window.innerWidth));
   if (winWidth > 765) {
-    var card_width = 230;
+    let card_width = 230;
   }
   else {
-    var card_width = 170;
+    let card_width = 170;
   }
-  // console.log(`before del: ${card}`);
   card = $('.card').length;
-  // console.log(`width: ${winWidth} card: ${card} ${Math.floor(winWidth / card_width)}`);
-  // console.log(`card width ${card_width}`);
   $( ".empty_card" ).remove();
-  // console.log(`after del: ${card}`);
   card = $('.card').length;
-  // console.log(card % Math.floor(winWidth / card_width));
   for (let i = 0; i < 5; i++){
     card = $('.card').length;
     if ((card % Math.floor(winWidth / card_width)) > 0) {
@@ -108,6 +102,6 @@ const check_card = function() {
 }
 setTimeout(check_card, 0);
 
-window.onresize = function() {
+window.onresize = () => {
   setTimeout(check_card, 100);
 };
